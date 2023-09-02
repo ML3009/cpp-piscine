@@ -34,7 +34,7 @@ $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	@rm -f $(OBJ)
+	@rm -f $(NAME)
 
 fclean : clean
 	@rm -f $(NAME)
