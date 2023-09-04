@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 14:55:19 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/09/04 16:37:46 by mvautrot         ###   ########.fr       */
+/*   Created: 2023/09/04 16:30:32 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/09/04 16:31:10 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "PhoneBook.hpp"
+#ifndef CONTACT_H
+# define CONTACT_H
 
-PhoneBook::PhoneBook( char name, int number ){
+class Contact {
 
-	std::cout << "Constructor called" << std::endl;
-	return ;
-}
+public:
 
-PhoneBook::~PhoneBook( void ) {
+	char	n;
+	int		nb;
 
-	std::cout << "Destructor called" << std::endl;
-	return ;
-}
+	Contact( char name, int number );
+	~Contact( void );
 
-void	PhoneBook::user( void ){
+	void	user( void );
+};
 
-	std::cout << "Member function user called" << std::endl;
-}
-
+#endif

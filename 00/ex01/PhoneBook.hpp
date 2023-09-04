@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:46:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/09/04 15:00:58 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/09/04 16:39:10 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@
 class PhoneBook {
 
 public:
-	PhoneBook( void );
+
+	char	n;
+	int		nb;
+
+	PhoneBook( char name, int number );
 	~PhoneBook( void );
+
+	void	user( void );
 };
 
 #endif

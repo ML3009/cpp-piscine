@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 14:55:19 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/09/04 16:37:46 by mvautrot         ###   ########.fr       */
+/*   Created: 2023/09/04 15:50:04 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/09/04 16:38:24 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
+#include <iostream>
 
-PhoneBook::PhoneBook( char name, int number ){
+int main(void)
+{
+	PhoneBook instance;
 
-	std::cout << "Constructor called" << std::endl;
-	return ;
+	instance.nb = 42;
+	std::cout << "instance.nb " << instance.nb << std::endl;
+
+	instance.user();
+
+	return 0;
 }
-
-PhoneBook::~PhoneBook( void ) {
-
-	std::cout << "Destructor called" << std::endl;
-	return ;
-}
-
-void	PhoneBook::user( void ){
-
-	std::cout << "Member function user called" << std::endl;
-}
-
