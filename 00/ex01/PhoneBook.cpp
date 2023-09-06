@@ -15,6 +15,7 @@
 PhoneBook::PhoneBook( void ){
 
 	std::cout << "Constructor called" << std::endl;
+	this->_index = 0;
 	return ;
 }
 
@@ -26,47 +27,39 @@ PhoneBook::~PhoneBook( void ) {
 
 void	PhoneBook::addUser (void) {
 
-	this->id++;
-
-
-}
-
-
-bool	hasOnlySpaces(std::string str) {
-
-	for (std::string::const_iterator it = str.begin(); it != str.end(); it++)
-		if (*it != ' ' && *it != '\t')
-			return false;
-	return true ;
-}
-
-void	PhoneBook::setaddUser ( void ) {
-
-	while (hasOnlySpaces(this->_firstName) == true)
-		std::cout << "first name : ", std::getline(std::cin, this->_firstName);
-	//if (this->_firstName.length() >= 10)
-	//	this->_firstName.resize(10), this->_firstName[9] = '.';
-
-	while (hasOnlySpaces(this->_lastName) == true)
-		std::cout << "last name : ", std::getline(std::cin, this->_lastName);
-	//if (this->_lastName.length() >= 10)
-	//	this->_lastName.resize(10), this->_lastName[9] = '.';
-
-	while (hasOnlySpaces(this->_nickName) == true)
-		std::cout << "nickname : ", std::getline(std::cin, this->_nickName);
-	//if (this->_nickName.length() >= 10)
-	//	this->_nickName.resize(10), this->_nickName[9] = '.';
-
-	while (hasOnlySpaces(this->_phoneNumber) == true)
-		std::cout << "phone number : ", std::getline(std::cin, this->_phoneNumber);
-	//if (this->_phoneNumber.length() >= 10)
-	//	this->_phoneNumber.resize(10), this->_phoneNumber[9] = '.';
-
-	while (hasOnlySpaces(this->_darkestSecret) == true)
-		std::cout << "darkest secret : ", std::getline(std::cin, this->_darkestSecret);
-	//if (this->_darkestSecret.length() >= 10)
-	//	this->_darkestSecret.resize(10), this->_darkestSecret[9] = '.';
-
+	if (this->_index == 8)
+		this->_index = 0;
+	this->_contact[this->_index].setaddUser();
+	this->_index++;
 	return ;
+	
+}
+
+void PhoneBook::searchUser (void) {
+
+	int	search = 0;
+	std::string index;
+	displayContact();
+	std::cout << "Please enter an index : " << std::endl;
+	std::cout << "> ";
+	std::getline(std::cin, index);
+	search = std::atoi(index.c_str());
+	if (search >= 0 && search < this->_index)
+		this->_contact[search].getaddUser();
+	else
+		std::cout << "Please enter a valid index" << std::endl;
+
+}
+
+void PhoneBook::displayContact (void) const {
+
+	std::cout << "id | first name | last name | nickname" << std::endl;
+	for (int i = 0; i < this->_index; i++)
+	{
+		std::cout << i << " | ";
+		this->_contact[i].printUser();
+	}
+	return ;
+
 }
 
