@@ -24,7 +24,8 @@ public:
 	~Contact( void );
 
 	void	getaddUser( void ) const;
-
+	void	printUser ( void ) const;
+	void	setaddUser ( void );
 
 private :
 

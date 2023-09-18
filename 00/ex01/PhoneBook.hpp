@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include "Contact.hpp"
 
 class PhoneBook {
 
@@ -24,19 +25,13 @@ public:
 	~PhoneBook( void );
 
 	void	searchUser(void) ;
-	void	setaddUser ( void );
 	void	addUser (void);
+	void	displayContact(void) const;
 
 private:
 
-	const int	id = 0;
-	std::string **repo;
-	std::string	_firstName;
-	std::string	_lastName;
-	std::string	_nickName;
-	std::string	_phoneNumber;
-	std::string	_darkestSecret;
-
+	int	_index;
+	Contact	_contact[8];
 
 };
 

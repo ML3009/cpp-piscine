@@ -25,9 +25,9 @@ int main(void)
 	{
 		getline(std::cin, cmd);
 		if (cmd == "ADD")
-			user.setaddUser(), std::cout << "> ";
+			user.addUser(), std::cout << "> ";
 		else if (cmd == "SEARCH")
-			user.setSearchUser(), std::cout << "> ";
+			user.searchUser(), std::cout << "> ";
 		else if (cmd == "EXIT")
 			break;
 		else if (cmd == "TEST")
