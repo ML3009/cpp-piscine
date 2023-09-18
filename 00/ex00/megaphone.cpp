@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:55:25 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/09/04 12:51:17 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/09/18 15:36:28 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int main(int ac, char **av)
 	else
 	{
 		for(i = 1; av[i]; i++)
+		{
 			for(j = 0; av[i][j]; j++)
-				if (av[i][j] >= 97 && av[i][j] <= 122)
-					av[i][j]-=32;
-		for (i = 1; av[i]; i++)
-			std::cout << av[i];
+				std::cout << (char)toupper(av[i][j]);
+			std::cout << " " ;
+		}
 		std::cout << std::endl;
 	}
 	return 0;
