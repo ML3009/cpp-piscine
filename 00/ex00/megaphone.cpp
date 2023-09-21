@@ -25,11 +25,12 @@ int main(int ac, char **av)
 	else
 	{
 		for(i = 1; av[i]; i++)
+		{
 			for(j = 0; av[i][j]; j++)
-				if (av[i][j] >= 97 && av[i][j] <= 122)
-					av[i][j]-=32;
-		for (i = 1; av[i]; i++)
-			std::cout << av[i];
+				std::cout << (char)std::toupper(av[i][j]);
+			if (av[i + 1])
+				std::cout << " ";
+		}
 		std::cout << std::endl;
 	}
 	return 0;

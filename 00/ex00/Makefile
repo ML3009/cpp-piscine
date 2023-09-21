@@ -22,23 +22,23 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = megaphone.cpp\
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	@echo $(GREEN)"\n CPP 00 - [COMPILATION OK]\n"$(NC)
+	@echo $(GREEN)"\n cpp: 00_00  [COMPILATION OK]\n"$(NC)
 
-.c.o :
+.cpp.o :
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	@rm -f $(NAME)
+	@rm -f $(OBJ)
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo $(GREEN)"\n CPP 00 - [CLEAN OK]\n" $(NC)
+	@echo $(GREEN)"\n cpp: 00_00  [CLEAN OK]\n" $(NC)
 
 re : fclean all
 
