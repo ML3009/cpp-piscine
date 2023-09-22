@@ -16,11 +16,9 @@
 int main(void)
 {
 	PhoneBook user;
-	Contact	info;
 	std::string cmd;
 
-
-	std::cout << "Welcome to the Awesome PhoneBook !" <<std::endl << "> ";
+	std::cout << "Welcome to the Awesome PhoneBook !" << std::endl << "> ";
 	while (1)
 	{
 		getline(std::cin, cmd);
@@ -30,8 +28,6 @@ int main(void)
 			user.searchUser(), std::cout << "> ";
 		else if (cmd == "EXIT")
 			break;
-		else if (cmd == "TEST")
-			std::cout << "ah" << std::endl;
 		else
 			std::cout << "enter ADD, SEARCH or EXIT" << std::endl << "> ";
 	}

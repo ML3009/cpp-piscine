@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+
 
 class Contact {
 
@@ -25,7 +27,7 @@ public:
 
 	void	getaddUser( void ) const;
 	void	printUser ( void ) const;
-	void	setaddUser ( void );
+	void	setaddUser ( int index );
 
 private :
 
@@ -34,7 +36,6 @@ private :
 	std::string	_nickName;
 	std::string	_phoneNumber;
 	std::string	_darkestSecret;
-
 };
 
 #endif

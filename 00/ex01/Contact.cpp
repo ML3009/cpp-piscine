@@ -14,14 +14,13 @@
 
 Contact::Contact ( void ) {
 
-	std::cout << "Constructor called" <<std::endl;
-
+	//std::cout << "Constructor called" <<std::endl;
 	return ;
 }
 
 Contact::~Contact( void ){
 
-	std::cout << "Destructor called" << std::endl;
+	//std::cout << "Destructor called" << std::endl;
 
 	return ;
 }
@@ -34,36 +33,31 @@ bool	hasOnlySpaces(std::string str) {
 	return true ;
 }
 
-void	Contact::setaddUser ( void ) {
+void	Contact::setaddUser ( int index ) {
 
+	this->_firstName = "";
+	this->_lastName = "";
+	this->_nickName = "";
+	this->_phoneNumber = "";
+	this->_darkestSecret = "";
+	
+	std::cout << "Contact n°" << index + 1 << std::endl;
 	while (hasOnlySpaces(this->_firstName) == true)
 		std::cout << "first name : ", std::getline(std::cin, this->_firstName);
-	//if (this->_firstName.length() >= 10)
-	//	this->_firstName.resize(10), this->_firstName[9] = '.';
 
 	while (hasOnlySpaces(this->_lastName) == true)
 		std::cout << "last name : ", std::getline(std::cin, this->_lastName);
-	//if (this->_lastName.length() >= 10)
-	//	this->_lastName.resize(10), this->_lastName[9] = '.';
 
 	while (hasOnlySpaces(this->_nickName) == true)
 		std::cout << "nickname : ", std::getline(std::cin, this->_nickName);
-	//if (this->_nickName.length() >= 10)
-	//	this->_nickName.resize(10), this->_nickName[9] = '.';
 
 	while (hasOnlySpaces(this->_phoneNumber) == true)
 		std::cout << "phone number : ", std::getline(std::cin, this->_phoneNumber);
-	//if (this->_phoneNumber.length() >= 10)
-	//	this->_phoneNumber.resize(10), this->_phoneNumber[9] = '.';
 
 	while (hasOnlySpaces(this->_darkestSecret) == true)
 		std::cout << "darkest secret : ", std::getline(std::cin, this->_darkestSecret);
-	//if (this->_darkestSecret.length() >= 10)
-	//	this->_darkestSecret.resize(10), this->_darkestSecret[9] = '.';
-
 	return ;
 }
-
 
 void	Contact::getaddUser ( void ) const{
 
@@ -80,20 +74,25 @@ void	Contact::getaddUser ( void ) const{
 	return ;
 }
 
+void	Contact::printUser ( void ) const {
+	
+	std::string firstName = this->_firstName;
+	std::string lastName = this->_lastName;
+	std::string nickName = this->_nickName;
 
-void	Contact::printUser ( void ) const{
+	if (firstName.length() >= 10)
+		firstName.resize(10), firstName[9] = '.';
+	std::cout << std::setw(10) <<  firstName << " | ";
 
-	std::cout <<  this->_firstName << " | ";
+	if (lastName.length() >= 10)
+		lastName.resize(10), lastName[9] = '.';
+	std::cout << std::setw(10) <<  lastName << " | ";
 
-	std::cout <<  this->_lastName << " | ";
-
-	std::cout <<  this->_nickName << " | ";
-
-	std::cout <<  this->_phoneNumber << " | ";
-
-	std::cout << this->_darkestSecret << std::endl;
-
+	if (nickName.length() >= 10)
+		nickName.resize(10), nickName[9] = '.';
+	std::cout << std::setw(10) << nickName << std::endl;
 	return ;
 }
+
 
 
