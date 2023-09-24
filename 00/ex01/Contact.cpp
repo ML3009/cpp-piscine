@@ -44,16 +44,12 @@ void	Contact::setaddUser ( int index ) {
 	std::cout << "Contact n°" << index + 1 << std::endl;
 	while (hasOnlySpaces(this->_firstName) == true)
 		std::cout << "first name : ", std::getline(std::cin, this->_firstName);
-
 	while (hasOnlySpaces(this->_lastName) == true)
 		std::cout << "last name : ", std::getline(std::cin, this->_lastName);
-
 	while (hasOnlySpaces(this->_nickName) == true)
 		std::cout << "nickname : ", std::getline(std::cin, this->_nickName);
-
 	while (hasOnlySpaces(this->_phoneNumber) == true)
 		std::cout << "phone number : ", std::getline(std::cin, this->_phoneNumber);
-
 	while (hasOnlySpaces(this->_darkestSecret) == true)
 		std::cout << "darkest secret : ", std::getline(std::cin, this->_darkestSecret);
 	return ;
@@ -62,13 +58,9 @@ void	Contact::setaddUser ( int index ) {
 void	Contact::getaddUser ( void ) const{
 
 	std::cout << "first name : " << this->_firstName << std::endl;
-
 	std::cout << "last name : " << this->_lastName << std::endl;
-
 	std::cout << "nickname : " << this->_nickName << std::endl;
-
 	std::cout << "phone number : " << this->_phoneNumber << std::endl;
-
 	std::cout << "darkest secret : "<< this->_darkestSecret << std::endl;
 
 	return ;
