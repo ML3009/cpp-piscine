@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:55:19 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/09/05 16:42:22 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:18:22 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 PhoneBook::PhoneBook( void ){
 
-	std::cout << "Constructor called" << std::endl;
+	//std::cout << "Constructor called" << std::endl;
 	this->_index = 0;
 	return ;
 }
 
 PhoneBook::~PhoneBook( void ) {
 
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "\n"<< std::endl;
 	return ;
 }
 
@@ -30,7 +30,7 @@ void	PhoneBook::addUser (void) {
 	this->_contact[this->_index % 8].setaddUser(this->_index % 8);
 	this->_index++;
 	return ;
-	
+
 }
 
 void PhoneBook::searchUser (void) const{

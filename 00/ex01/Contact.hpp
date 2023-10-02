@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:30:32 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/09/05 16:25:23 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/02 10:42:44 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 
 class Contact {
