@@ -21,7 +21,7 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = Account.cpp\
-	  main.cpp\
+	  tests.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -16,9 +16,6 @@
 //                               Account Class                                //
 // ************************************************************************** //
 
-#include <iostream>
-#include <string>
-
 class Account {
 
 
