@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:55:25 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/09 10:33:58 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/09 10:35:35 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main(int ac, char **av)
 	else
 	{
 		for(i = 1; av[i]; i++)
-		{
 		{
 			for(j = 0; av[i][j]; j++)
 				std::cout << (char)toupper(av[i][j]);
