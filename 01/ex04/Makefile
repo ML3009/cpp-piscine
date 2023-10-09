@@ -14,7 +14,7 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = Weapon
+NAME = replace
 
 CC = c++
 
@@ -28,7 +28,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	@echo $(GREEN)"\n cpp: 01_03 [COMPILATION OK]\n"$(NC)
+	@echo $(GREEN)"\n cpp: 01_04 [COMPILATION OK]\n"$(NC)
 
 .cpp.o :
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -38,7 +38,7 @@ clean :
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo $(GREEN)"\n cpp: 01_03  [CLEAN OK]\n" $(NC)
+	@echo $(GREEN)"\n cpp: 01_04  [CLEAN OK]\n" $(NC)
 
 re : fclean all
 
