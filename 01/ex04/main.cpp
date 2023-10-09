@@ -4,17 +4,17 @@
 
 /*Les principales classes fournies par <fstream> sont :
 
-ifstream (input file stream) : Cette classe est utilisée pour lire à partir 
-de fichiers. Vous pouvez l'utiliser pour ouvrir un fichier existant et 
+ifstream (input file stream) : Cette classe est utilisée pour lire à partir
+de fichiers. Vous pouvez l'utiliser pour ouvrir un fichier existant et
 lire son contenu.
 
-ofstream (output file stream) : Cette classe est utilisée pour écrire dans 
-des fichiers. Vous pouvez l'utiliser pour créer un fichier ou écrire dans 
+ofstream (output file stream) : Cette classe est utilisée pour écrire dans
+des fichiers. Vous pouvez l'utiliser pour créer un fichier ou écrire dans
 un fichier existant.
 
-fstream (file stream) : Cette classe est une combinaison des deux classes 
-précédentes, ce qui signifie qu'elle peut être utilisée à la fois pour la 
-lecture et l'écriture de fichiers. Elle permet donc de manipuler un fichier 
+fstream (file stream) : Cette classe est une combinaison des deux classes
+précédentes, ce qui signifie qu'elle peut être utilisée à la fois pour la
+lecture et l'écriture de fichiers. Elle permet donc de manipuler un fichier
 en mode lecture/écriture.*/
 
 
@@ -31,22 +31,22 @@ Bien entendu, vous devez gérer les entrées inattendues et les erreurs possible
 et rendez vos propres tests afin de prouver que votre programme fonctionne.*/
 
 int main (int ac, char **av) {
- 
+
     if (ac != 4)
         return std::cout << "usage: ./replace <filename> <s1> <s2>" << std::endl, 1;
 
     std::string s1(av[2]);
     std::string s2(av[3]);
-    std::string filename(av[1]);
+    //std::string filename(av[1]);
 
     if (s1.empty() || s2.empty())
         return std::cout << "s1 and s2 must not be empty" << std::endl, 1;
 
-    std::ifstream ifs(filename);
+    std::ifstream ifs(av[1]);
     if (!ifs.is_open())
         return std::cout << "could not open file" << std::endl, 1;
 
-    std::string replace_file_name(filename + ".replace");
+    std::string replace_file_name((std::string)av[1] + ".replace");
     std::ofstream ofs(replace_file_name.c_str(), std::ios::app); // std::ios::app : append to the end of the file
     if (!ofs.is_open())
         return std::cout << "could not create replace file" << std::endl, ifs.close(), 1;
