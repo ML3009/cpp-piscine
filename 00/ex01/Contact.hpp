@@ -6,15 +6,18 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:30:32 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/09/05 16:25:23 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/02 10:42:44 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+#include <cstdlib>
+
 
 class Contact {
 
@@ -25,7 +28,7 @@ public:
 
 	void	getaddUser( void ) const;
 	void	printUser ( void ) const;
-	void	setaddUser ( void );
+	void	setaddUser ( int index );
 
 private :
 
@@ -34,7 +37,6 @@ private :
 	std::string	_nickName;
 	std::string	_phoneNumber;
 	std::string	_darkestSecret;
-
 };
 
 #endif

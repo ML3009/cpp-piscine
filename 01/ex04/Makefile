@@ -14,15 +14,13 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = PhoneBook
+NAME = replace
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = PhoneBook.cpp\
-	  Contact.cpp\
-	  main.cpp\
+SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -30,7 +28,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	@echo $(GREEN)"\n cpp: 00_01 [COMPILATION OK]\n"$(NC)
+	@echo $(GREEN)"\n cpp: 01_04 [COMPILATION OK]\n"$(NC)
 
 .cpp.o :
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -40,7 +38,7 @@ clean :
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo $(GREEN)"\n cpp: 00_01  [CLEAN OK]\n" $(NC)
+	@echo $(GREEN)"\n cpp: 01_04  [CLEAN OK]\n" $(NC)
 
 re : fclean all
 

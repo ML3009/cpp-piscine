@@ -14,14 +14,15 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = PhoneBook
+NAME = Zombie
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = PhoneBook.cpp\
-	  Contact.cpp\
+SRC = Zombie.cpp\
+	  newZombie.cpp\
+	  randomChump.cpp\
 	  main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
@@ -30,7 +31,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	@echo $(GREEN)"\n cpp: 00_01 [COMPILATION OK]\n"$(NC)
+	@echo $(GREEN)"\n cpp: 01_00 [COMPILATION OK]\n"$(NC)
 
 .cpp.o :
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -40,7 +41,7 @@ clean :
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo $(GREEN)"\n cpp: 00_01  [CLEAN OK]\n" $(NC)
+	@echo $(GREEN)"\n cpp: 01_00  [CLEAN OK]\n" $(NC)
 
 re : fclean all
 

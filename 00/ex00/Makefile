@@ -28,7 +28,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	@echo $(GREEN)"\n CPP 00 - [COMPILATION OK]\n"$(NC)
+	@echo $(GREEN)"\n cpp: 00_00  [COMPILATION OK]\n"$(NC)
 
 .cpp.o :
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -38,7 +38,7 @@ clean :
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo $(GREEN)"\n CPP 00 - [CLEAN OK]\n" $(NC)
+	@echo $(GREEN)"\n cpp: 00_00  [CLEAN OK]\n" $(NC)
 
 re : fclean all
 

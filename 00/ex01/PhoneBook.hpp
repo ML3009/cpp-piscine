@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
-#include <iostream>
-#include <string>
 #include "Contact.hpp"
 
 class PhoneBook {
@@ -24,10 +22,10 @@ public:
 	PhoneBook( void );
 	~PhoneBook( void );
 
-	void	searchUser(void) ;
+	void	searchUser(void) const;
 	void	addUser (void);
 	void	displayContact(void) const;
-
+	
 private:
 
 	int	_index;
