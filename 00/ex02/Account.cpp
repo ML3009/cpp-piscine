@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <ctime>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -9,15 +10,15 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 Account::Account ( int initial_deposit) {
-   
+
     this->_accountIndex = this->getNbAccounts();
     this-> _amount = initial_deposit;
     this->_nbDeposits = 0;
     this->_nbWithdrawals = 0;
     Account::_totalAmount += initial_deposit;
     Account::_displayTimestamp();
-    std::cout << "index:" << this->_accountIndex 
-    << ";amount:" << this->checkAmount() 
+    std::cout << "index:" << this->_accountIndex
+    << ";amount:" << this->checkAmount()
     << ";created" << std::endl;
     Account::_nbAccounts += 1;
 }
@@ -82,7 +83,7 @@ bool    Account::makeWithdrawal ( int withdrawal ){
         this->_nbWithdrawals ++;
         Account::_totalAmount -= withdrawal;
         Account::_totalNbWithdrawals ++;
-        std::cout << withdrawal 
+        std::cout << withdrawal
         << ";amount:" << this->checkAmount()
         << ";nb_withdrawals:" << this->_nbWithdrawals
         << std::endl;
@@ -100,10 +101,10 @@ int Account::checkAmount( void ) const{
 void    Account::displayStatus( void ) const{
 
     Account::_displayTimestamp();
-    std::cout 
+    std::cout
     << "index:" << this->_accountIndex
     << ";amount:" << this->_amount
-    << ";deposits:" << this->_nbDeposits 
+    << ";deposits:" << this->_nbDeposits
     << ";withdrawals:" << this->_nbWithdrawals
     << std::endl;
 
@@ -114,10 +115,12 @@ void    Account::_displayTimestamp( void ){
 
     time_t now;
     struct tm * timeinfo;
+    char buffer[20];
     time(&now);
     timeinfo = localtime(&now);
-    std::cout << std::put_time(timeinfo, "[%Y%m%d_%H%M%S] ");
-    
+    std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", timeinfo);
+    std::cout << buffer;
+
     return ;
 }
 

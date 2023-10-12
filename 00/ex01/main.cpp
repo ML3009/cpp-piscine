@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:50:04 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/02 11:21:31 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:16:20 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int main(void)
 	std::cout << "Welcome to the Awesome PhoneBook !" << std::endl << "> ";
 	while (getline(std::cin, cmd))
 	{
-		if (std::cin.eof() == true)
-			return 0;
 		if (cmd == "ADD")
 			user.addUser(), std::cout << "> ";
 		else if (cmd == "SEARCH")
@@ -32,6 +30,8 @@ int main(void)
 		else
 			std::cout << "enter ADD, SEARCH or EXIT" << std::endl << "> ";
 	}
+	if (std::cin.eof() == true)
+		std::cout << "Exit PhoneBook" <<std::endl;
 	return 0;
 }
 

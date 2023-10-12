@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:31:53 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/02 11:16:58 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/12 13:20:28 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 Contact::Contact ( void ) {
 
-	//std::cout << "Constructor called" <<std::endl;
 	return ;
 }
 
 Contact::~Contact( void ){
-
-	//std::cout << "Destructor called" << std::endl;
 
 	return ;
 }
@@ -45,31 +42,46 @@ void	Contact::setaddUser ( int index ) {
 	while (hasOnlySpaces(this->_firstName) == true)
 	{
 		if (std::cin.eof() == true)
+		{
+			std::cout << std::endl;
 			return ;
+		}
 		std::cout << "first name : ", std::getline(std::cin, this->_firstName);
 	}
 	while (hasOnlySpaces(this->_lastName) == true)
 	{
 		if (std::cin.eof() == true)
+		{
+			std::cout << std::endl;
 			return ;
+		}
 		std::cout << "last name : ", std::getline(std::cin, this->_lastName);
 	}
 	while (hasOnlySpaces(this->_nickName) == true)
 	{
 		if (std::cin.eof() == true)
+		{
+			std::cout << std::endl;
 			return ;
+		}
 		std::cout << "nickname : ", std::getline(std::cin, this->_nickName);
 	}
 	while (hasOnlySpaces(this->_phoneNumber) == true)
 	{
 		if (std::cin.eof() == true)
+		{
+			std::cout << std::endl;
 			return ;
+		}
 		std::cout << "phone number : ", std::getline(std::cin, this->_phoneNumber);
 	}
 	while (hasOnlySpaces(this->_darkestSecret) == true)
 	{
 		if (std::cin.eof() == true)
+		{
+			std::cout << std::endl;
 			return ;
+		}
 		std::cout << "darkest secret : ", std::getline(std::cin, this->_darkestSecret);
 	}
 	return ;
