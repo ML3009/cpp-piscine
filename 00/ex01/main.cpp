@@ -18,20 +18,27 @@ int main(void)
 	PhoneBook user;
 	std::string cmd;
 
-	std::cout << "Welcome to the Awesome PhoneBook !" << std::endl << "> ";
+	std::cout << std::endl;
+	std::cout << "----------------------------------" << std::endl;
+	std::cout << "Welcome to the Awesome PhoneBook !" << std::endl;
+	std::cout << "----------------------------------" << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl << "[ADD, SEARCH or EXIT] > ";
 	while (getline(std::cin, cmd))
 	{
 		if (cmd == "ADD")
-			user.addUser(), std::cout << "> ";
+			user.addUser(), std::cout << "[ADD, SEARCH or EXIT] > ";
 		else if (cmd == "SEARCH")
-			user.searchUser(), std::cout << "> ";
+			user.searchUser(), std::cout << "[ADD, SEARCH or EXIT] > ";
 		else if (cmd == "EXIT")
 			break;
 		else
-			std::cout << "enter ADD, SEARCH or EXIT" << std::endl << "> ";
+			std::cout << "Please enter ADD, SEARCH or EXIT" << std::endl << "[ADD, SEARCH or EXIT] > ";
 	}
-	if (std::cin.eof() == true)
-		std::cout << "Exit PhoneBook" <<std::endl;
+	std::cout << std::endl;
+	std::cout << "----------------------------------" << std::endl;
+	std::cout << "Exiting the Awesome PhoneBook." <<std::endl;
+	std::cout << "----------------------------------" << std::endl;
 	return 0;
 }
 

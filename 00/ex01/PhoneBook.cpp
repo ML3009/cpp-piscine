@@ -41,6 +41,11 @@ void PhoneBook::searchUser (void) const{
 	displayContact();
 	std::cout << "Please enter an index : ";
 	std::getline(std::cin, index);
+	if (std::cin.eof() == true)
+	{
+			std::cout << std::endl;
+			return ;
+	}
 	search = std::atoi(index.c_str());
 	if (limit > 8)
 		limit = 8;
@@ -58,15 +63,18 @@ void PhoneBook::displayContact (void) const {
 	int	limit = this->_index;
 	if (limit > 8)
 		limit = 8;
+	std::cout << std::endl;
 	std::cout << std::setw(10) << "index" << " | ";
 	std::cout << std::setw(10) << "first name" << " | ";
 	std::cout << std::setw(10) << "last name" << " | ";
 	std::cout << std::setw(10) << "nickname" << std::endl;
+	std::cout << "---------------------------------------------------" << std::endl;
 	for (int i = 0; i < limit ; i++)
 	{
 		std::cout << std::setw(10) << i << " | ";
 		this->_contact[i].printUser();
 	}
+	std::cout << std::endl;
 	return ;
 }
 
