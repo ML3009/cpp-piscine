@@ -32,11 +32,11 @@ bool	hasOnlySpaces(std::string str) {
 
 void	Contact::setaddUser ( int index ) {
 
-	this->_firstName = "";
-	this->_lastName = "";
-	this->_nickName = "";
-	this->_phoneNumber = "";
-	this->_darkestSecret = "";
+	this->_firstName.clear();
+	this->_lastName.clear();
+	this->_nickName.clear();
+	this->_phoneNumber.clear();
+	this->_darkestSecret.clear();
 
 	std::cout << std::endl << "[Contact n°" << index + 1 << "]" << std::endl << std::endl;
 	while (hasOnlySpaces(this->_firstName) == true)
@@ -88,17 +88,6 @@ void	Contact::setaddUser ( int index ) {
 	return ;
 }
 
-void	Contact::getaddUser ( void ) const{
-
-	std::cout << std::endl << "first name : " << this->_firstName << std::endl;
-	std::cout << "last name : " << this->_lastName << std::endl;
-	std::cout << "nickname : " << this->_nickName << std::endl;
-	std::cout << "phone number : " << this->_phoneNumber << std::endl;
-	std::cout << "darkest secret : "<< this->_darkestSecret << std::endl << std::endl;
-
-	return ;
-}
-
 void	Contact::printUser ( void ) const {
 
 	std::string firstName = this->_firstName;
@@ -119,5 +108,14 @@ void	Contact::printUser ( void ) const {
 	return ;
 }
 
+void	Contact::getaddUser ( void ) const{
+
+	std::cout << std::endl << "first name : " << this->_firstName << std::endl;
+	std::cout << "last name : " << this->_lastName << std::endl;
+	std::cout << "nickname : " << this->_nickName << std::endl;
+	std::cout << "phone number : " << this->_phoneNumber << std::endl;
+	std::cout << "darkest secret : "<< this->_darkestSecret << std::endl << std::endl;
+	return ;
+}
 
 

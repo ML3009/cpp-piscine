@@ -26,9 +26,9 @@ public:
 	Contact( void );
 	~Contact( void );
 
-	void	getaddUser( void ) const;
-	void	printUser ( void ) const;
 	void	setaddUser ( int index );
+	void	printUser ( void ) const;
+	void	getaddUser( void ) const;
 
 private :
 
