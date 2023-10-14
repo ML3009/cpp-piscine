@@ -16,8 +16,4 @@ class Weapon {
         std::string _type;
 };
 
-
-
-
-
 #endif
