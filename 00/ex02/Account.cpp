@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/12 13:43:36 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/10/12 13:43:39 by mvautrot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
 #include <iomanip>
@@ -51,9 +63,6 @@ int Account::getNbWithdrawals ( void ){
 
     return Account::_totalNbWithdrawals;
 }
-
-
-
 
 void    Account ::makeDeposit ( int deposit ){
 

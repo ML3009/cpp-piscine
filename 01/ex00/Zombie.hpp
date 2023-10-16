@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/12 13:40:59 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/10/12 13:41:01 by mvautrot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
@@ -11,8 +23,8 @@ class Zombie {
         ~Zombie( void );
         void setName( std::string name );
         void announce( void );
-    
-    
+
+
     private:
         std::string _name;
 
