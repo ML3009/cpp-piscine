@@ -12,7 +12,7 @@ class Fixed {
         Fixed(const Fixed& obj); // constructeur de recopie
         Fixed &operator=(const Fixed& obj); // surcharge de l'operation d'affectation
         ~Fixed(); //Destructeur
-
+        
         int getRawBits(void) const;
         void setRawBits(int const raw);
     
@@ -22,5 +22,11 @@ class Fixed {
         static int const _b = 8;
 
 };
+
+
+
+
+
+
 
 #endif
