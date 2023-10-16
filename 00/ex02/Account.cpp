@@ -129,7 +129,6 @@ void    Account::_displayTimestamp( void ){
     timeinfo = localtime(&now);
     std::strftime(buffer, sizeof(buffer), "[%Y%m%d_%H%M%S] ", timeinfo);
     std::cout << buffer;
-
     return ;
 }
 
@@ -141,6 +140,5 @@ void    Account::displayAccountsInfos( void ){
     << ";deposits:" << Account::getNbDeposits()
     << ";withdrawals:" << Account::getNbWithdrawals()
     << std::endl;
-
     return ;
 }
