@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:41:45 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/12 13:41:47 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:19:00 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon) {
 
     std::cout << "Constructor called" << std::endl;
-    return ;
 }
 
 HumanA::~HumanA(void) {
 
     std::cout << "Destructor called" << std::endl;
-    return ;
 }
 
 void HumanA::attack(void) const {

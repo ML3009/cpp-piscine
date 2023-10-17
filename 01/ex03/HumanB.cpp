@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:41:58 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/12 13:42:01 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:19:06 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 HumanB::HumanB(std::string name) : _name(name) {
 
     std::cout << "Constructor called" << std::endl;
-    return ;
 }
 
 HumanB::~HumanB(void) {
 
     std::cout << "Destructor called" << std::endl;
-    return ;
 }
 
 void HumanB::attack(void) const {

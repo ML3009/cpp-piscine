@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 10:58:46 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/10/16 10:58:49 by mvautrot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 int main(int ac, char **av) {
@@ -7,7 +19,7 @@ int main(int ac, char **av) {
 
     if (ac != 2)
         return std::cout << "usage: ./HarlFilter <LEVEL>" << std::endl, -1;
-    
+
     level = harl.getLevel(av[1]);
     switch (level) {
         case DEBUG:
