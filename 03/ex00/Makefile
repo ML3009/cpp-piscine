@@ -14,16 +14,14 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = Fixed_BSP
+NAME = ClapTrap
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp\
-	  Fixed.cpp\
-	  Point.cpp\
-	  bsp.cpp
+	  ClapTrap.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
