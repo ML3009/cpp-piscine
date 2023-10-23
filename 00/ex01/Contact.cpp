@@ -6,21 +6,15 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:31:53 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/12 13:20:28 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:10:23 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact ( void ) {
+Contact::Contact (void) { }
 
-	return ;
-}
-
-Contact::~Contact( void ){
-
-	return ;
-}
+Contact::~Contact(void){ }
 
 bool	hasOnlySpaces(std::string str) {
 
@@ -30,7 +24,7 @@ bool	hasOnlySpaces(std::string str) {
 	return true ;
 }
 
-void	Contact::setaddUser ( int index ) {
+void	Contact::setaddUser(int index) {
 
 	this->_firstName.clear();
 	this->_lastName.clear();
@@ -88,7 +82,7 @@ void	Contact::setaddUser ( int index ) {
 	return ;
 }
 
-void	Contact::printUser ( void ) const {
+void	Contact::printUser (void) const {
 
 	std::string firstName = this->_firstName;
 	std::string lastName = this->_lastName;
@@ -108,7 +102,7 @@ void	Contact::printUser ( void ) const {
 	return ;
 }
 
-void	Contact::getaddUser ( void ) const{
+void	Contact::getaddUser (void) const{
 
 	std::cout << std::endl << "first name : " << this->_firstName << std::endl;
 	std::cout << "last name : " << this->_lastName << std::endl;

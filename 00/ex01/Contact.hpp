@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:30:32 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/02 10:42:44 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:11:29 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ class Contact {
 
 public:
 
-	Contact( void );
-	~Contact( void );
+	Contact(void);
+	~Contact(void);
 
-	void	setaddUser ( int index );
-	void	printUser ( void ) const;
-	void	getaddUser( void ) const;
+	void	setaddUser (int index);
+	void	printUser (void) const;
+	void	getaddUser(void) const;
 
-private :
+private:
 
 	std::string	_firstName;
 	std::string	_lastName;

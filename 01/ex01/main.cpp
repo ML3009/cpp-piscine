@@ -6,13 +6,13 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:41:10 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/12 13:41:12 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:14:36 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main( void ) {
+int main(void) {
 
     Zombie* zombie = zombieHorde(5, "newZombie");
     for (int i = 0; i < 5; i++)

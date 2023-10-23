@@ -6,13 +6,13 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:40:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/16 10:06:01 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:14:02 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main( void ) {
+int main(void) {
 
     Zombie* zombie = newZombie("newZombie");
     zombie->announce();

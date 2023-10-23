@@ -6,20 +6,20 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:41:16 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/16 10:06:23 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:45:44 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-
 Zombie::Zombie(void) {
 
+    std::cout << "Zombie created" << std::endl;
 }
 
 Zombie::~Zombie(void) {
 
-    std::cout << "Destructed " << this->_name << std::endl;
+    std::cout << this->_name << " destroyed" << std::endl;
 }
 
 void Zombie::setName(std::string name) {

@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:40:59 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/12 13:41:01 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:14:30 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 class Zombie {
 
     public:
-        Zombie( void );
-        ~Zombie( void );
+        Zombie(void);
+        ~Zombie(void);
+
         void setName( std::string name );
         void announce( void );
-
 
     private:
         std::string _name;

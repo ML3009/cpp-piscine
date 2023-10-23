@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/09/04 16:38:46 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/10/23 15:33:19 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	@echo $(GREEN)"\n cpp: 01_00 [COMPILATION OK]\n"$(NC)
+	@echo $(GREEN)"\n cpp 01: ex00 [COMPILATION OK]\n"$(NC)
 
 .cpp.o :
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -41,7 +41,7 @@ clean :
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo $(GREEN)"\n cpp: 01_00  [CLEAN OK]\n" $(NC)
+	@echo $(GREEN)"\n cpp 01: ex00  [CLEAN OK]\n" $(NC)
 
 re : fclean all
 

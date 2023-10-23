@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:40:52 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/16 10:06:16 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:37:48 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 Zombie::Zombie(void) {
 
+    std::cout << "Zombie created" << std::endl;
 }
 
 Zombie::~Zombie(void) {
 
-    std::cout << "Destructed " << this->_name << std::endl;
+    std::cout << this->_name << " destroyed" << std::endl;
 }
 
 void Zombie::setName(std::string name) {

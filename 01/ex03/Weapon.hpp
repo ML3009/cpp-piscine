@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:42:23 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/16 10:06:34 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:31:17 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Weapon {
     public:
         Weapon(std::string type);
         ~Weapon(void);
+        
         std::string const& getType(void) const;
         void setType(std::string type);
 

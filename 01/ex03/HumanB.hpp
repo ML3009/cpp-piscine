@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:42:05 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/12 13:42:07 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:31:11 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class HumanB {
     public:
         HumanB(std::string name);
         ~HumanB(void);
+        
         void attack(void) const;
         void setWeapon(Weapon& weapon);
 

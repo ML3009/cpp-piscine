@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:46:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/09/05 17:02:44 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:13:28 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ class PhoneBook {
 
 public:
 
-	PhoneBook( void );
-	~PhoneBook( void );
+	PhoneBook(void);
+	~PhoneBook(void);
 
 	void	searchUser(void) const;
-	void	addUser (void);
+	void	addUser(void);
 	void	displayContact(void) const;
-	
+
 private:
 
 	int	_index;

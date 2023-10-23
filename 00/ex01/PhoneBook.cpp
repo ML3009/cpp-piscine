@@ -6,33 +6,24 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:55:19 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/12 13:11:30 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:19:26 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook( void ){
+PhoneBook::PhoneBook(void) { this->_index = 0;}
 
-	this->_index = 0;
-	return ;
-}
+PhoneBook::~PhoneBook(void) { std::cout << "\n"<< std::endl;}
 
-PhoneBook::~PhoneBook( void ) {
-
-	std::cout << "\n"<< std::endl;
-	return ;
-}
-
-void	PhoneBook::addUser (void) {
+void	PhoneBook::addUser(void) {
 
 	this->_contact[this->_index % 8].setaddUser(this->_index % 8);
 	this->_index++;
-	return ;
-
+	return;
 }
 
-void PhoneBook::searchUser (void) const{
+void PhoneBook::searchUser(void) const{
 
 	int	search = 0;
 	int	limit = this->_index;
@@ -56,11 +47,13 @@ void PhoneBook::searchUser (void) const{
 		std::cout << "Please enter a valid index" << std::endl;
 		searchUser();
 	}
+	return;
 }
 
 void PhoneBook::displayContact (void) const {
 
 	int	limit = this->_index;
+
 	if (limit > 8)
 		limit = 8;
 	std::cout << std::endl;
@@ -75,7 +68,7 @@ void PhoneBook::displayContact (void) const {
 		this->_contact[i].printUser();
 	}
 	std::cout << std::endl;
-	return ;
+	return;
 }
 
 

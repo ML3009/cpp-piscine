@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:06:48 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/16 10:06:49 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:32:15 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Harl {
 
         Harl(void);
         ~Harl(void);
+        
         void complain(std::string level);
 
     private:

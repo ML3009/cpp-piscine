@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 10:58:46 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/16 10:58:49 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:05:08 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main(int ac, char **av) {
             harl.complain("WARNING");
         case ERROR:
             harl.complain("ERROR");
+            break;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
