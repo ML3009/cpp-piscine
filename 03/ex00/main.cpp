@@ -18,13 +18,17 @@ int main(void) {
 	std::string target = "Gustave";
 
 	H.attack(target);
-	H.takeDamage(2);
+	H.takeDamage(3);
 	H.beRepaired(1);
 	H.takeDamage(4);
 	H.beRepaired(3);
 	H.takeDamage(4);
-	H.takeDamage(8);
+	H.takeDamage(2);
+	H.beRepaired(1);
+	H.takeDamage(2);
+	H.takeDamage(2);
 	H.attack(target);
+
 
 	return 0;
 }
