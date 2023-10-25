@@ -1,6 +1,13 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap() {}
+FragTrap::FragTrap(void) : ClapTrap() {
+
+    _name = "unknow";
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
+    std::cout << "FragTrap is up " << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
 
@@ -8,7 +15,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) {
     this->_hitPoints = 100;
     this->_energyPoints = 100;
     this->_attackDamage = 30;
-    std::cout << "FragTrap is up " << std::endl;  
+    std::cout << "FragTrap is up " << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& rhs) { *this = rhs; }
@@ -24,8 +31,8 @@ FragTrap& FragTrap::operator=(const FragTrap& rhs) {
 }
 
 FragTrap::~FragTrap(void) {
-    
-    std::cout << "FragTrap is down " << std::endl;  
+
+    std::cout << "FragTrap is down " << std::endl;
 }
 
 void FragTrap::highFivesGuy(void) {

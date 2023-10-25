@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 13:42:31 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/12 13:42:33 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:23:46 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string>
 
 void   replaceStr(const std::string& s1, const std::string& s2, std::ifstream& ifs, std::ofstream& ofs) {
-    
+
     std::string line;
     int pos;
     while (std::getline(ifs, line)) {
@@ -44,13 +44,13 @@ int main (int ac, char **av) {
     std::string s2(av[3]);
     if (s1.empty() || s2.empty())
         return std::cout << "s1 and s2 must not be empty" << std::endl, -1;
-    
+
     std::ifstream ifs(av[1]);
     if (!ifs.is_open())
         return std::cout << "could not open file" << std::endl, -1;
 
     std::string replace_file_name((std::string)av[1] + ".replace");
-    std::ofstream ofs(replace_file_name.c_str(), std::ios::app); 
+    std::ofstream ofs(replace_file_name.c_str(), std::ios::trunc);
     if (!ofs.is_open())
         return std::cout << "could not create replace file" << std::endl, ifs.close(), -1;
 
