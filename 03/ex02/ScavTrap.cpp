@@ -2,7 +2,7 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap() {}
 
-ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name) { 
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) { 
    
     _hitPoints = 100;
     _energyPoints = 50;
