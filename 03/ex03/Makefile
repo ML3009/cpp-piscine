@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/10/19 16:42:08 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/10/26 11:42:21 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = FragTrap
+NAME = DiamondTrap
 
 CC = c++
 

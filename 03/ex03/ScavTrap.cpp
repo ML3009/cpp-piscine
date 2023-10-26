@@ -4,8 +4,8 @@ ScavTrap::ScavTrap(void) : ClapTrap() {
 
     _name = "unknow";
     _hitPoints = 100;
-    _energyPoints = 100;
-    _attackDamage = 30;
+    _energyPoints = 50;
+    _attackDamage = 20;
     std::cout << "ScavTrap is born " << std::endl;
 }
 
