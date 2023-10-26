@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:49:30 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/26 17:22:23 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:36:06 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Animal {
 		Animal(void);
 		Animal(const Animal& rhs);
 		Animal& operator=(const Animal& rhs);
-		~Animal(void);
+		virtual ~Animal(void);
 
 		virtual void makeSound() const;
 		std::string getType() const;

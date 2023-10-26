@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:59:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/26 17:30:46 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:35:32 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
 mita->makeSound();
+
+delete meta;
+delete j;
+delete i;
+delete mita;
+delete k;
 
 return 0;
 
