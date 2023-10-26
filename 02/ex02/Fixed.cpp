@@ -39,7 +39,6 @@ Fixed::~Fixed(void) {
 
 int Fixed::getRawBits(void) const {
 
-    std::cout << "getRawBits member function called" << std::endl;
     return this->_aFix;
 }
 

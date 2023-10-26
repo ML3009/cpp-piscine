@@ -7,17 +7,15 @@
 class Fixed {
 
     public:
-
-        Fixed(void); // constructeur par defaut
-        Fixed(const Fixed& obj); // constructeur de recopie
-        Fixed &operator=(const Fixed& obj); // surcharge de l'operation d'affectation
-        ~Fixed(); //Destructeur
+        Fixed(void);
+        Fixed(const Fixed& obj);
+        Fixed &operator=(const Fixed& obj);
+        ~Fixed();
 
         int getRawBits(void) const;
         void setRawBits(int const raw);
-    
-    private:
 
+    private:
         int _aFix;
         static int const _b = 8;
 
