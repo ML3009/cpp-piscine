@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/26 16:49:36 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/26 17:22:34 by mvautrot         ###   ########.fr       */
+/*   Created: 2023/10/26 16:49:38 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/10/26 17:22:46 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-Cat::Cat(void) : Animal()  {
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-	this->type = "Cat";
-	std::cout << "Cat's constructor" << std::endl;
-}
 
-Cat::Cat(const Cat& rhs) {
+class Cat : public Animal {
 
-	*this = rhs;
-}
+	public:
+		Cat(void);
+		Cat(const Cat& rhs);
+		Cat& operator=(const Cat&  rhs);
+		~Cat(void);
 
-Cat& Cat::operator=(const Cat& rhs) {
+		void makeSound() const;
+	
+	private:
+		Brain* ideas;
+};
 
-	this->type = rhs.type;
-	return *this;
-}
 
-Cat::~Cat(void) {
-
-	std::cout << "Cat's destructor" << std::endl;
-}
-
-void Cat::makeSound(void) const {
-
-	std::cout << "[ Cat ]: meoooow !" << std::endl;
-}
+#endif
