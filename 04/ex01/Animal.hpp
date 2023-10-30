@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:49:30 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/26 17:36:06 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:25:02 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ class Animal {
 
 		virtual void makeSound() const;
 		std::string getType() const;
-		
-		virtual void setIdea(int posidea, std::string idea);
-        virtual std::string getIdea(int posidea) const;
 
 	protected:
 		std::string type;
