@@ -10,9 +10,13 @@ class Brain {
         Brain(void);
         Brain(const Brain& rhs);
         Brain& operator=(const Brain& rhs);
-        ~Brain(void);
-        
-        std::string ideas[100];
+        virtual ~Brain(void);
+
+        virtual void setIdea(int posidea, std::string idea);
+        virtual std::string getIdea(int posidea) const;
+
+    private:
+        std::string _ideas[100];
 };
 
 

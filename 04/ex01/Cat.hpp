@@ -26,6 +26,8 @@ class Cat : public Animal {
 		~Cat(void);
 
 		void makeSound() const;
+		virtual void setIdea(int posidea, std::string idea);
+        virtual std::string getIdea(int posidea) const;
 	
 	private:
 		Brain* ideas;
