@@ -22,7 +22,9 @@ Dog::Dog(void) : Animal()  {
 
 Dog::Dog(const Dog& rhs) {
 
-	*this = rhs;
+	this->type = rhs.type;
+	this->ideas = new Brain(*rhs.ideas);
+	std::cout << "Dog Copy created" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& rhs) {
