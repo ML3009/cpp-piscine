@@ -21,11 +21,14 @@ Cat::Cat(void) : Animal()  {
 
 Cat::Cat(const Cat& rhs) {
 
-	*this = rhs;
+	//*this = rhs; 
+	this->type = rhs.type;
+	this->ideas = new Brain(*rhs.ideas);
+	std::cout << "Cat Copy created" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& rhs) {
-
+	
 	if (this != &rhs)
 	{
 		this->type = rhs.type;
