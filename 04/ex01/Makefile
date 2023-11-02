@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/10/30 13:44:21 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/02 11:07:49 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,6 @@ SRC = main.cpp\
 	  Dog.cpp\
 	  Cat.cpp\
 	  Brain.cpp \
-	  WrongAnimal.cpp\
-	  WrongCat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
