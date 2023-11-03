@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:43:12 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/19 17:17:16 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 09:59:27 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ class ClapTrap {
 		void beRepaired(unsigned int amount);
 
 	private:
-		std::string _Name;
+		std::string		_Name;
 		unsigned int	_hitPoints;
-		unsigned int _energyPoints;
+		unsigned int	_energyPoints;
 		unsigned int	_attackDamage;
 
 };

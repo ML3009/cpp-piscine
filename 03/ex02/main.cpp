@@ -4,26 +4,27 @@
 
 int main(void) {
 
+    std::cout << "\n [creation] \n" << std::endl;
+
     ClapTrap Clap("ClapTrap");
     ScavTrap Scav("ScavTrap");
     FragTrap Frag("FragTrap");
 
-    Scav.attack("ClapTrap");
-    Clap.attack("ScavTrap");
+    std::cout << "\n [attack] \n" << std::endl;
+
+    Scav.attack("Gustave");
+    Clap.attack("Henriette");
     Frag.attack("Random");
 
-    Scav.guardGate();
+    std::cout << "\n [tests] \n" << std::endl;
+
     Frag.highFivesGuy();
     Frag.takeDamage(2);
-    Scav.takeDamage(101);
-    Scav.guardGate();
     Frag.takeDamage(200);
     Frag.highFivesGuy();
-    Scav.beRepaired(4);
     Frag.beRepaired(4);
-    Clap.beRepaired(2);
-    Scav.takeDamage(1);
 
+    std::cout << "\n [destruction] \n" << std::endl;
 
     return 0;
 }

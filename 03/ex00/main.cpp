@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:43:19 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/19 16:43:20 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 10:48:00 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 int main(void) {
 
+	std::cout << "\n [creation] \n" << std::endl;
+
 	ClapTrap H("ClapTrap");
 	std::string target = "Gustave";
 
-	H.attack(target);
-	H.takeDamage(3);
-	H.beRepaired(1);
-	H.takeDamage(4);
-	H.beRepaired(3);
-	H.takeDamage(4);
-	H.takeDamage(2);
-	H.beRepaired(1);
-	H.takeDamage(2);
-	H.takeDamage(2);
-	H.attack(target);
+	std::cout << "\n [test] \n" << std::endl;
 
+	H.attack(target);
+	H.takeDamage(5);
+	H.beRepaired(2);
+	H.takeDamage(9);
+	H.attack(target);
+	H.beRepaired(2);
+
+	std::cout << "\n [destruction] \n" << std::endl;
 
 	return 0;
 }

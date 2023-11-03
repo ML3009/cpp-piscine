@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:59:55 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/25 13:58:17 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 10:01:05 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(const ClapTrap &rhs) {*this = rhs;}
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 
     this->_name = rhs._name;
-    this->_hitPoints = rhs._energyPoints;
+    this->_hitPoints = rhs._hitPoints;
     this->_energyPoints = rhs._energyPoints;
     this->_attackDamage = rhs._attackDamage;
     return *this;

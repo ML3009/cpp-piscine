@@ -5,31 +5,27 @@
 
 int main(void) {
 
-    //ClapTrap Clap("ClapTrap");
-    //ScavTrap Scav("ScavTrap");
-    //FragTrap Frag("FragTrap");
+    std::cout << "\n [creation] \n" << std::endl;
+
+    ClapTrap Clap("ClapTrap");
+    ScavTrap Scav("ScavTrap");
+    FragTrap Frag("FragTrap");
     DiamondTrap Diam("DiamondTrap");
 
-    //Scav.attack("ClapTrap");
-    //Clap.attack("ScavTrap");
-    //Frag.attack("Random");
-    Diam.attack("COUCOU");
+    std::cout << "\n [attack]\n" << std::endl;
 
-    //Scav.guardGate();
+    Scav.attack("ClapTrap");
+    Clap.attack("ScavTrap");
+    Frag.attack("Random");
+    Diam.attack("Henriette");
+
+    std::cout << "\n [DiamondTrap]\n" << std::endl;
+
     Diam.whoAmI();
-    //Diam.takeDamage(50);
-    //Diam.beRepaired(2);
-    //Frag.highFivesGuy();
-    //Frag.takeDamage(2);
-    //Scav.takeDamage(101);
-    //Scav.guardGate();
-    //Frag.takeDamage(200);
-    //Frag.highFivesGuy();
-    //Scav.beRepaired(4);
-    //Frag.beRepaired(4);
-    //Clap.beRepaired(2);
-    //Scav.takeDamage(1);
+    Diam.takeDamage(50);
+    Diam.beRepaired(2);
 
+    std::cout << "\n [destruction] \n" << std::endl;
 
     return 0;
 }
