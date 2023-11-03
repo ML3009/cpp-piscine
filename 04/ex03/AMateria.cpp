@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:25:52 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 15:40:26 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:31:10 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 AMateria::AMateria() : type("random") {
 
-	std::cout << "Default's constructor" << std::endl;
+	std::cout << "AMateria's constructor" << std::endl;
 }
 
 AMateria::AMateria(std::string const& type) {
@@ -43,11 +43,6 @@ std::string const& AMateria::getType() const {
 
 	return this->type;
 }
-
-/*AMateria* AMateria::clone() const {
-
-	return new AMateria(*this);
-}*/
 
 void AMateria::use(ICharacter& target) {
 

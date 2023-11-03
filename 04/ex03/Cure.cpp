@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:05:05 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 15:27:53 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 16:31:33 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cure::Cure() : AMateria() {
 
 	this->type = "cure";
-	std::cout << "Default's constructor" << std::endl;
+	std::cout << "Cure's constructor" << std::endl;
 }
 
 Cure::Cure(std::string const& type) : AMateria(type) {
