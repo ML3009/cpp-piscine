@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:25:52 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 16:31:10 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:30:05 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,4 @@ void AMateria::use(ICharacter& target) {
 	else
 		std::cout << "inventory is empty !" << std::endl;
 	return;
-
 }
