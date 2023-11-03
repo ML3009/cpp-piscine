@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:25:52 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/02 16:36:10 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:40:26 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,14 @@ std::string const& AMateria::getType() const {
 	return new AMateria(*this);
 }*/
 
-/*void AMateria::use(ICharacter& target) {
+void AMateria::use(ICharacter& target) {
 
+	if (this->getType()== "ice")
+		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	else if (this->getType() == "cure")
+		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	else
+		std::cout << "inventory is empty !" << std::endl;
+	return;
 
-Pour ce qui est de la fonction membre use(ICharacter&), elle affichera :
-• Ice : "* shoots an ice bolt at <name> *"
-• Cure : "* heals <name>’s wounds *"
-<name> est le nom du Character (personnage) passé en paramètre. N’affichez pas les
-chevrons (< et >).
-
-}*/
+}

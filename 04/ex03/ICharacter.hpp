@@ -6,13 +6,18 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:16:13 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/02 16:35:44 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:34:19 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
+#include <iostream>
 #include <string>
+
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
 class AMateria;
 
@@ -25,3 +30,26 @@ class ICharacter {
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
 };
+
+class Character : public ICharacter {
+
+	public:
+		Character();
+		Character(std::string name);
+		Character(const Character& rhs);
+		Character& operator=(const Character& rhs);
+		~Character();
+
+		std::string const& getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
+
+	protected:
+		std::string name;
+		AMateria* stock[4];
+
+};
+
+
+#endif

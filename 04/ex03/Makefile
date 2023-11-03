@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/11/02 16:33:44 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/03 15:27:18 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = Animal
+NAME = Materia
 
 CC = c++
 
@@ -22,10 +22,10 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SRC = main.cpp\
 	  AMateria.cpp\
-	  Cure.cpp\
-	  Ice.cpp\
 	  Character.cpp\
 	  MateriaSource.cpp\
+	  Cure.cpp\
+	  Ice.cpp\
 
 
 OBJ = $(SRC:.cpp=.o)

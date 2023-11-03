@@ -6,11 +6,11 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:05:05 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/02 12:08:40 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:27:53 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "AMateria.hpp"
 
 Cure::Cure() : AMateria() {
 

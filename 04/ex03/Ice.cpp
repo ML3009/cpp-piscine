@@ -6,11 +6,11 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:02:48 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/02 12:08:48 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:28:04 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "AMateria.hpp"
 
 
 Ice::Ice() : AMateria() {
