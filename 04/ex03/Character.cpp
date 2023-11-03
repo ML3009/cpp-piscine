@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:29:14 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 17:00:20 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:26:36 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,3 +93,11 @@ void Character::use(int idx, ICharacter& target) {
 		std::cout  << "nothing usable here" << std::endl;
 	return;
 }
+
+AMateria* Character::saveEquip(int idx) {
+
+	if (this->stock[idx])
+		return this->stock[idx];
+	return NULL;
+}
+
