@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:57:12 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 15:34:11 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:49:14 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class MateriaSource : public IMateriaSource {
 		AMateria* createMateria(std::string const& type);
 
 	protected:
-		AMateria* stock[4];
+		AMateria* inventory[4];
 
 };
 

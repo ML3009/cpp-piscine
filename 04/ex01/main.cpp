@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:59:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/30 13:37:23 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 10:58:55 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int main(void)
     std::cout << "\nAnimal:\n" << std::endl;
     delete a;
 
-//    std::cout << "\n\t[Copy Constructor]" << std::endl;
 
     std::cout << "\n[Construction Cat]\n" << std::endl;
     Cat cat;

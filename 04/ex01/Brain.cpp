@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:30:33 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 17:30:36 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 10:57:20 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,16 @@ Brain::~Brain(void) {
 
 void    Brain::setIdea(int posidea, std::string idea) {
 
-    this->_ideas[posidea] = idea;
+    if (posidea < 100)
+        this->_ideas[posidea] = idea;
+    else
+        std::cout << "too many ideas !" << std::endl;
 }
 
 std::string Brain::getIdea(int posidea) const {
 
-    return this->_ideas[posidea];
+    if (posidea < 100)
+        return this->_ideas[posidea];
+    else
+        return "is empty";
 }

@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:49:36 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/10/30 13:33:18 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:04:49 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,13 @@ Cat::Cat(void) : Animal()  {
 
 Cat::Cat(const Cat& rhs) {
 
-	//*this = rhs; 
 	this->type = rhs.type;
 	this->ideas = new Brain(*rhs.ideas);
 	std::cout << "Cat Copy created" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& rhs) {
-	
+
 	if (this != &rhs)
 	{
 		this->type = rhs.type;

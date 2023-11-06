@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:29:14 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 17:26:36 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:48:44 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ Character::Character()  {
 	this->name = "random";
 	std::cout << "Character's constructor" << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->stock[i] = NULL;
+		this->inventory[i] = NULL;
 }
 
 Character::Character(std::string name) {
 
 	this->name = name;
 	for (int i = 0; i < 4; i++)
-		this->stock[i] = NULL;
+		this->inventory[i] = NULL;
 	std::cout << "Character's constructor" << std::endl;
 }
 
@@ -32,12 +32,7 @@ Character::Character(const Character& rhs) {
 
 	this->name = rhs.name;
 	for (int i = 0; i < 4; i++){
-		if (this->stock[i])
-			delete this->stock[i];
-		if (rhs.stock[i])
-			this->stock[i] = rhs.stock[i];
-		else
-			this->stock[i] = NULL;
+		this->inventory[i] = rhs.inventory[i];
 	}
 }
 
@@ -45,12 +40,7 @@ Character& Character::operator=(const Character& rhs) {
 
 	this->name = rhs.name;
 	for (int i = 0; i < 4; i++){
-		if (this->stock[i])
-			delete this->stock[i];
-		if (rhs.stock[i])
-			this->stock[i] = rhs.stock[i];
-		else
-			this->stock[i] = NULL;
+		this->inventory[i] = rhs.inventory[i];
 	}
 	return *this;
 }
@@ -58,7 +48,7 @@ Character& Character::operator=(const Character& rhs) {
 Character::~Character() {
 
 	for (int i = 0; i < 4; i++)
-		delete this->stock[i];
+		delete this->inventory[i];
 	std::cout << "Character's destructor" << std::endl;
 }
 
@@ -70,8 +60,8 @@ std::string const& Character::getName() const {
 void Character::equip(AMateria* m) {
 
 	for (int i = 0; i < 4; i++) {
-		if (this->stock[i] == NULL) {
-			this->stock[i] = m;
+		if (this->inventory[i] == NULL) {
+			this->inventory[i] = m;
 			return;
 		}
 	}
@@ -81,14 +71,14 @@ void Character::equip(AMateria* m) {
 
 void Character::unequip(int idx) {
 
-	this->stock[idx] = NULL;
+	this->inventory[idx] = NULL;
 	return;
 }
 
 void Character::use(int idx, ICharacter& target) {
 
-	if (this->stock[idx])
-		this->stock[idx]->use(target);
+	if (this->inventory[idx])
+		this->inventory[idx]->use(target);
 	else
 		std::cout  << "nothing usable here" << std::endl;
 	return;
@@ -96,8 +86,8 @@ void Character::use(int idx, ICharacter& target) {
 
 AMateria* Character::saveEquip(int idx) {
 
-	if (this->stock[idx])
-		return this->stock[idx];
+	if (this->inventory[idx])
+		return this->inventory[idx];
 	return NULL;
 }
 

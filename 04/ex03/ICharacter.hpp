@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:16:13 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 17:25:14 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:48:19 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class Character : public ICharacter {
 
 	protected:
 		std::string name;
-		AMateria* stock[4];
+		AMateria* inventory[4];
 
 };
 

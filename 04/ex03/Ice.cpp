@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:02:48 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 16:31:36 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 12:22:38 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Ice::Ice(std::string const& type) : AMateria(type) {
 	std::cout << "Ice's constructor" << std::endl;
 }
 
-Ice::Ice(const Ice& rhs) {
+Ice::Ice(const Ice& rhs) : AMateria(rhs.getType()) {
 
 	*this = rhs;
 }
