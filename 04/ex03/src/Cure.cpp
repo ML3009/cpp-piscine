@@ -1,46 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 12:02:48 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/06 12:22:38 by mvautrot         ###   ########.fr       */
+/*   Created: 2023/11/02 12:05:05 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/11/06 13:05:55 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-Ice::Ice() : AMateria() {
+Cure::Cure() : AMateria() {
 
-	this->type = "ice";
-	std::cout << "Ice's constructor" << std::endl;
+	this->type = "cure";
+	std::cout << "Cure's constructor" << std::endl;
 }
 
-Ice::Ice(std::string const& type) : AMateria(type) {
+Cure::Cure(std::string const& type) : AMateria(type) {
 
 	this->type = type;
-	std::cout << "Ice's constructor" << std::endl;
+	std::cout << "Cure's constructor" << std::endl;
 }
 
-Ice::Ice(const Ice& rhs) : AMateria(rhs.getType()) {
+Cure::Cure(const Cure& rhs) : AMateria(rhs.getType()) {
 
+	std::cout << "Cure's copy" << std::endl;
 	*this = rhs;
 }
 
-Ice& Ice::operator=(const Ice& rhs) {
+Cure& Cure::operator=(const Cure& rhs) {
 
 	this->type = rhs.type;
 	return *this;
 }
 
-Ice::~Ice() {
+Cure::~Cure() {
 
-	std::cout << "Ice's destructor" << std::endl;
+	std::cout << "Cure's destructor" << std::endl;
 }
 
-Ice* Ice::clone() const {
+Cure* Cure::clone() const {
 
-	return new Ice(*this);
+	return new Cure(*this);
 }
+

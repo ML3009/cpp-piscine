@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:18:57 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/03 17:06:13 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:26:39 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AMateria {
 		AMateria& operator=(const AMateria& rhs);
 		virtual ~AMateria();
 
-		std::string const& getType()const; // Returns the materia type
+		std::string const& getType()const;
 
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);

@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:02:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/06 12:49:26 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:25:59 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,14 @@ MateriaSource::MateriaSource() : IMateriaSource() {
 MateriaSource::MateriaSource(const MateriaSource& rhs) {
 
 	for (int i = 0; i < 4; i++){
-		if (this->inventory[i])
-			delete this->inventory[i];
-		if (rhs.inventory[i])
-			this->inventory[i] = rhs.inventory[i];
-		else
-			this->inventory[i] = NULL;
+		this->inventory[i] = rhs.inventory[i];
 	}
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& rhs) {
 
 	for (int i = 0; i < 4; i++){
-		if (this->inventory[i])
-			delete this->inventory[i];
-		if (rhs.inventory[i])
-			this->inventory[i] = rhs.inventory[i];
-		else
-			this->inventory[i] = NULL;
+		this->inventory[i] = rhs.inventory[i];
 	}
 	return *this;
 }

@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/11/03 16:52:38 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/06 13:22:48 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,12 +20,14 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 
-SRC = main.cpp\
-	  AMateria.cpp\
-	  Character.cpp\
-	  MateriaSource.cpp\
-	  Cure.cpp\
-	  Ice.cpp\
+INCLUDE_DIR = include
+
+SRC = src/main.cpp\
+	  src/AMateria.cpp\
+	  src/Character.cpp\
+	  src/MateriaSource.cpp\
+	  src/Cure.cpp\
+	  src/Ice.cpp\
 
 
 OBJ = $(SRC:.cpp=.o)
@@ -37,7 +39,7 @@ $(NAME) : $(OBJ)
 	@echo $(GREEN)"\n cpp 04: ex03 [COMPILATION OK]\n"$(NC)
 
 .cpp.o :
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 clean :
 	@rm -f $(OBJ)

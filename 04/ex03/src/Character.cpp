@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:29:14 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/06 12:48:44 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 13:08:57 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void Character::equip(AMateria* m) {
 void Character::unequip(int idx) {
 
 	this->inventory[idx] = NULL;
+	std::cout << this->getName() << " drop his material" << std::endl;
 	return;
 }
 
