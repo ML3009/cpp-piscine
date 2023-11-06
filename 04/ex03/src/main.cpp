@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:12:53 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/06 13:17:03 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:23:18 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,25 @@ int main()
 	tmp = src->createMateria("ice");
 	gus->equip(tmp);
 
-	std::cout << "\n[Copy Character]\n" << std::endl;
-	ICharacter* cogus (gus);
-
-	std::cout << "\n[" << cogus->getName() << " use Materia on " << gus->getName() << "]\n" << std::endl;
-	cogus->use(0, *gus);
-	cogus->use(1, *gus);
-
 	std::cout << "\n[New Character]\n" << std::endl;
 	ICharacter* bob = new Character("Bob");
+
+	std::cout << "\n [Equip Character]\n" << std::endl;
+	tmp = src->createMateria("ice");
+	bob->equip(tmp);
 
 	std::cout << "\n[" << gus->getName() << " use Materia on " << bob->getName() << "]\n" << std::endl;
 	gus->use(0, *bob);
 	gus->use(1, *bob);
+	gus->use(3, *bob);
 
-	std::cout << "\n[unequip Materia]\n" << std::endl;
+	std::cout << "\n[Unequip Character]\n" << std::endl;
 	AMateria* tmp1 = gus->saveEquip(0);
 	gus->unequip(0);
+	AMateria* tmp2 = bob->saveEquip(0);
+	bob->unequip(0);
+	AMateria* tmp3 = bob->saveEquip(3);
+	bob->unequip(3);
 
 	std::cout << "\n[Destruction]\n" << std::endl;
 	std ::cout << "Character :\n" << std::endl;
@@ -58,6 +60,8 @@ int main()
 	delete gus;
 	std ::cout << "\nMateria :\n" << std::endl;
 	delete tmp1;
+	delete tmp2;
 	delete src;
+	delete tmp3;
 	return 0;
 }

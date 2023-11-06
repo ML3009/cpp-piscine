@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 12:29:14 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/06 13:08:57 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:12:29 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,23 +71,27 @@ void Character::equip(AMateria* m) {
 
 void Character::unequip(int idx) {
 
-	this->inventory[idx] = NULL;
-	std::cout << this->getName() << " drop his material" << std::endl;
+	if (idx < 4 && this->inventory[idx]) {
+		std::cout << this->getName() << " drop " << this->inventory[idx]->getType() << std::endl;
+		this->inventory[idx] = NULL;
+	}
+	else
+		std::cout  << "nothing to drop" << std::endl;
 	return;
 }
 
 void Character::use(int idx, ICharacter& target) {
 
-	if (this->inventory[idx])
+	if (idx < 4 && this->inventory[idx])
 		this->inventory[idx]->use(target);
 	else
-		std::cout  << "nothing usable here" << std::endl;
+		std::cout  << "* nothing usable *" << std::endl;
 	return;
 }
 
 AMateria* Character::saveEquip(int idx) {
 
-	if (this->inventory[idx])
+	if (idx < 4 && this->inventory[idx])
 		return this->inventory[idx];
 	return NULL;
 }
