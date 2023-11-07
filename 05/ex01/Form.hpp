@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:33:03 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/07 19:55:00 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/07 19:57:28 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Form {
 		const int 		getGradeSign() const;
 		const int 		getGradeExec() const;
 		void			beSigned(Bureaucrat member);
+		void			exceptFun();
 
 	private:
 
