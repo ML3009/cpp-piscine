@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:35 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/07 16:25:19 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:59:45 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ class Bureaucrat {
 
 		std::string getName() const;
 		int 		getGrade() const;
+		void		upGrade();
+		void		downGrade();
+		void		exceptFun();
 
 	private:
 

@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/07 17:07:09 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:00:22 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@ Bureaucrat::Bureaucrat() : _name("random"), _grade(0) {
 }
 
 Bureaucrat::Bureaucrat(const std::string _name, int _grade) : _name(_name), _grade(_grade) {
-
-	//make a try-catch
-
 	std::cout << "Bureaucrat's constructor" << std::endl;
-
+	this->exceptFun();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& rhs) : _name(rhs.getName()), _grade(rhs.getGrade()) {
@@ -46,12 +43,37 @@ int	Bureaucrat::getGrade() const {
 	return this->_grade;
 }
 
+void	Bureaucrat::downGrade() {
+	this->_grade++;
+}
+
+void Bureaucrat::upGrade() {
+	this->_grade--;
+}
+
+void	Bureaucrat::exceptFun() {
+	try {
+		if (this->_grade < 1)
+			throw GradeTooHighException();
+	} catch (const Bureaucrat::GradeTooHighException& e) {
+		std::cerr << "Caught an exception: " << e.what();
+	}
+
+	try {
+		if (this->_grade > 150)
+			throw GradeTooLowException();
+	} catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cerr << "Caught an exception : " << e.what();
+	}
+	return ;
+}
+
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too high!";
+	return "Grade is too high!\n";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade is too low!";
+	return "Grade is too low!\n";
 }
 
 

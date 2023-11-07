@@ -6,8 +6,16 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:33 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/06 17:01:20 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:00:33 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+int	main() {
+
+	Bureaucrat office("Gus", 200);
+
+
+	return 0;
+}
