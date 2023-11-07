@@ -6,18 +6,15 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/07 18:12:36 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:40:35 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("random"), _grade(0) {
-	std::cout << "Bureaucrat's default constructor" << std::endl;
-}
+Bureaucrat::Bureaucrat() : _name("random"), _grade(0) { }
 
 Bureaucrat::Bureaucrat(const std::string _name, int _grade) : _name(_name), _grade(_grade) {
-	std::cout << "Bureaucrat's constructor" << std::endl;
 	this->exceptFun();
 }
 
@@ -31,9 +28,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
 	return *this;
 }
 
-Bureaucrat::~Bureaucrat() {
-	std::cout << "Bureaucrat's destructor" << std::endl;
-}
+Bureaucrat::~Bureaucrat() { }
 
 std::string Bureaucrat::getName() const {
 	return this->_name;
@@ -44,11 +39,15 @@ int	Bureaucrat::getGrade() const {
 }
 
 void	Bureaucrat::downGrade() {
+	std::cout << "Decrease in "  << this->_name  << " grade " << this->_grade << " to " << this->_grade + 1<< std::endl;
 	this->_grade++;
+	this->exceptFun();
 }
 
 void Bureaucrat::upGrade() {
+	std::cout << "Increase in "  << this->_name  << " grade " << this->_grade << " to " << this->_grade - 1 << std::endl;
 	this->_grade--;
+	this->exceptFun();
 }
 
 void	Bureaucrat::exceptFun() {
