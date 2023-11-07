@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:35 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/07 17:59:45 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/07 18:12:25 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ class Bureaucrat {
 		int					_grade;
 
 };
+
+std::ostream & operator<<(std::ostream& o, const Bureaucrat& rhs);
 
 
 
