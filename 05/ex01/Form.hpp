@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:33:03 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/07 19:57:28 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:01:26 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ class Form {
 		const int 		getGradeSign() const;
 		const int 		getGradeExec() const;
 		void			beSigned(Bureaucrat member);
-		void			exceptFun();
+		//void			exceptSign();
+		void			exceptExec();
 
 	private:
 
@@ -52,6 +53,6 @@ class Form {
 
 };
 
-std::ostream & operator<<(std::ostream& o, const Form& rhs);
+std::ostream& operator << (std::ostream& o, const Form& rhs);
 
 #endif

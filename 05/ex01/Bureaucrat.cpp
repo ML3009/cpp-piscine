@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/07 18:40:35 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:08:52 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ void Bureaucrat::upGrade() {
 	std::cout << "Increase in "  << this->_name  << " grade " << this->_grade << " to " << this->_grade - 1 << std::endl;
 	this->_grade--;
 	this->exceptFun();
+}
+
+void	Bureaucrat::signForm(Form sign) {
+	if (sign.getSign() == true)
+		std::cout << this->_name << " signed " << sign.getName() << std::endl;
+	else
+		std::cout << this->_name << " couldn't sign " << sign.getName() << " because " << this->getGrade() << std::endl;
 }
 
 void	Bureaucrat::exceptFun() {
