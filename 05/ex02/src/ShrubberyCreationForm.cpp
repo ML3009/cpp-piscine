@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:39:14 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 13:24:52 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/08 14:07:51 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& rhs){
 
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs){
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& rhs){
 
 	return *this;
 }
@@ -30,7 +30,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm(){
 
 }
-
 
 /*---------------- Operator ------------- */
 

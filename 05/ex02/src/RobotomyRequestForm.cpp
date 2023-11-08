@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:39:30 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 13:24:26 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:27:21 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& rhs){
 
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& rhs){
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& rhs){
 
 	return *this;
 }
