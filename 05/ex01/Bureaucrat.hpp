@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:35 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/07 19:47:31 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/08 11:13:07 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 

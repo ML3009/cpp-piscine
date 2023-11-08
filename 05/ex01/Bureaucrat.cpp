@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 11:08:52 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/08 12:14:04 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Bureaucrat::Bureaucrat() : _name("random"), _grade(0) { }
 
 Bureaucrat::Bureaucrat(const std::string _name, int _grade) : _name(_name), _grade(_grade) {
+	std::cout << *this << std::endl;
 	this->exceptFun();
 }
 
@@ -51,10 +52,16 @@ void Bureaucrat::upGrade() {
 }
 
 void	Bureaucrat::signForm(Form sign) {
-	if (sign.getSign() == true)
-		std::cout << this->_name << " signed " << sign.getName() << std::endl;
-	else
-		std::cout << this->_name << " couldn't sign " << sign.getName() << " because " << this->getGrade() << std::endl;
+	try {
+		sign.beSigned(*this);
+		std::cout << this->_name << " signed " << sign.getName() << std::endl << std::endl;
+	}	catch (const Form::GradeTooHighException& e) {
+			std::cerr << this->_name << " couldn't sign " << sign.getName() << " because " << e.what();
+	}	catch (const Form::GradeTooLowException& e) {
+			std::cerr << this->_name << " couldn't sign " << sign.getName() << " because " << e.what();
+	}	catch(...) {
+			std::cerr << "Unknow error" << std::endl;
+	}
 }
 
 void	Bureaucrat::exceptFun() {
@@ -75,16 +82,16 @@ void	Bureaucrat::exceptFun() {
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too high!\n";
+	return "Grade is too high!\n\n";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade is too low!\n";
+	return "Grade is too low!\n\n";
 }
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& rhs) {
 
-	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
 	return o;
 }
 
