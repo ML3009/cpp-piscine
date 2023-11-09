@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:39:30 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 13:27:21 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:00:18 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,51 @@
 
 /*----------------- Coplien ------------- */
 
-RobotomyRequestForm::RobotomyRequestForm(){
-
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 72, 45){
+	this->_target = "randomRobotomy";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& rhs){
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm ("Robotomy", 72, 45){
+	this->_target = target;
+}
 
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& rhs) : AForm(rhs){
+	this->_target = rhs._target;
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& rhs){
-
+	this->_target = rhs._target;
+	*this = rhs;
 	return *this;
 }
 
-RobotomyRequestForm::~RobotomyRequestForm(){
+RobotomyRequestForm::~RobotomyRequestForm(){}
 
+std::string	RobotomyRequestForm::getTarget() const{
+	return this->_target;
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const& executor) const{
+	if (this->getSign() == false)
+		throw SignExecException();
+	if (executor.getGrade() < 1)
+		throw GradeTooHighException();
+	if (this->getGradeExec() < executor.getGrade())
+		throw GradeTooLowException();
+	executeRobotomy();
+	return;
+}
+
+void	RobotomyRequestForm::executeRobotomy() const{
+	std::cout << "[drilling noises]" << std::endl;
+	std::srand(std::time(0));
+	int random = std::rand() % 10;
+	if (random > 4)
+		std::cout << this->_target << " has been robotomized successfully 50%/ of the time." << std::endl;
+	else
+		std::cout << "The robotomy failed." << std::endl;
+	return;
 }
 
 
-/*---------------- Operator ------------- */
-
-std::ostream& operator<<(std::ostream& o, const RobotomyRequestForm& rhs){
-	o   << std::endl;
-	return o;
-}
-
-
-/*---------- Getter / Setter ------------ */
-
-
-/*--------------- Function -------------- */
-
-
-/*--------------- Exception ------------- */
 

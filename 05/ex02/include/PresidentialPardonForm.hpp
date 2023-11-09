@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:19:26 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 14:13:59 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:42:40 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ class PresidentialPardonForm : public AForm {
 
 	public:
 		PresidentialPardonForm();
+		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm& rhs);
 		PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
 		~PresidentialPardonForm();
 
-	private:
-		const std::string	_name;
-		bool				_sign;
-		const int			_gradSign;
-		const int			_gradExec;
-};
+		std::string		getTarget() const;
+		virtual void	execute(Bureaucrat const& executor) const;
+		void			executePresidential() const;
 
-std::ostream& operator<<(std::ostream& o, const PresidentialPardonForm& rhs);
+	private:
+		std::string	_target;
+};

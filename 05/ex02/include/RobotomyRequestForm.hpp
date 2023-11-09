@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:38:29 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 14:14:21 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/09 15:54:50 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include "AForm.hpp"
 
 
@@ -21,15 +23,15 @@ class RobotomyRequestForm : public AForm {
 
 	public:
 		RobotomyRequestForm();
+		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm& rhs);
 		RobotomyRequestForm& operator=(const RobotomyRequestForm& rhs);
 		~RobotomyRequestForm();
 
-	private:
-		const std::string	_name;
-		bool				_sign;
-		const int			_gradSign;
-		const int			_gradExec;
-};
+		std::string		getTarget() const;
+		virtual void	execute(Bureaucrat const& executor) const;
+		void			executeRobotomy() const;
 
-std::ostream& operator<<(std::ostream& o, const RobotomyRequestForm& rhs);
+	private:
+		std::string	_target;
+};

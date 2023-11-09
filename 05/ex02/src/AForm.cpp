@@ -57,14 +57,21 @@ void	AForm::beSigned(Bureaucrat member) {
 	return ;
 }
 
-const char* AForm::GradeTooHighException::what() const throw() {
+const char* AForm::GradeTooHighException::what() const throw(){
 	return "the grade is too high!\n\n";
 }
 
-const char* AForm::GradeTooLowException::what() const throw() {
+const char* AForm::GradeTooLowException::what() const throw(){
 	return "the grade is too low!\n\n";
 }
 
+const char* AForm::SignExecException::what() const throw(){
+	return "the form isn't signed!\n\n";
+}
+
+const char* AForm::FileError::what() const throw(){
+	return "Could not open file!\n\n";
+}
 std::ostream& operator<<(std::ostream& o, const AForm& rhs) {
 
 	o << "The level's grade required to sign " << rhs.getName()

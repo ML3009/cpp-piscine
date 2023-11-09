@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:35:36 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 14:14:34 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:08:32 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm {
 
 	public:
 		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& rhs);
 		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& rhs);
 		~ShrubberyCreationForm();
 
-	private:
-		const std::string	_name;
-		bool				_sign;
-		const int			_gradSign;
-		const int			_gradExec;
-};
+		std::string		getTarget() const;
+		virtual void	execute(Bureaucrat const& executor) const;
+		void			executeShrubbery() const;
 
-std::ostream& operator<<(std::ostream& o, const ShrubberyCreationForm& rhs);
+
+	private:
+		std::string	_target;
+
+};

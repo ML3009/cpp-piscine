@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/11/08 12:27:05 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/09 16:22:58 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,11 @@ CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 SRC = main.cpp\
 	  Bureaucrat.cpp\
 	  AForm.cpp\
+	  PresidentialPardonForm.cpp\
+	  ShrubberyCreationForm.cpp\
+	  RobotomyRequestForm.cpp\
+
+
 
 INCLUDE_DIR = include
 

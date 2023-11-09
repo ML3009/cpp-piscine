@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:33:03 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 13:22:42 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:11:49 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,20 @@ class AForm {
 			public:
 				virtual const char* what() const throw();
 		};
-		virtual std::string		getName() const = 0;
-		virtual bool			getSign() const = 0;
-		virtual int 			getGradeSign() const = 0;
-		virtual int 			getGradeExec() const = 0;
-		virtual void			beSigned(Bureaucrat member) = 0;
+		class SignExecException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
+		class FileError : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
+		virtual std::string		getName() const;
+		virtual bool			getSign() const;
+		virtual int 			getGradeSign() const;
+		virtual int 			getGradeExec() const;
+		virtual void			beSigned(Bureaucrat member);
+		virtual void			execute(Bureaucrat const& executor) const = 0;
 
 	private:
 		const std::string	_name;
