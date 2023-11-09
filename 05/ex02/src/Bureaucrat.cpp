@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/09 16:15:48 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:43:42 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,13 @@ void	Bureaucrat::signForm(AForm& sign){
 void	Bureaucrat::executeForm(AForm const& form){
 	try {
 		form.execute(*this);
-		std::cout << this->_name << " executed " << form.getName() << std::endl;
+		std::cout << this->_name << " executed " << form.getName() << std::endl << std::endl;
 	} catch (const AForm::GradeTooHighException& e){
 		std::cerr << this->_name << " couldn't execute " << form.getName() << " because " << e.what();
 	} catch (const AForm::GradeTooLowException& e){
 		std::cerr << this->_name << " couldn't execute " << form.getName() << " because " << e.what();
+	} catch (const AForm::SignExecException& e){
+		std::cerr << this->_name << " couldn't exectue " << form.getName() << " because " << e.what();
 	} catch (const AForm::FileError& e) {
 		std::cerr << e.what() << std::endl;
 	}

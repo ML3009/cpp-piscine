@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:39:30 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/09 16:00:18 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:44:23 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& rhs) : AForm
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& rhs){
-	this->_target = rhs._target;
-	*this = rhs;
+	if (this != &rhs)
+	{
+		this->_target = rhs._target;
+		*this = rhs;
+	}
 	return *this;
 }
 
@@ -50,13 +53,13 @@ void	RobotomyRequestForm::execute(Bureaucrat const& executor) const{
 }
 
 void	RobotomyRequestForm::executeRobotomy() const{
-	std::cout << "[drilling noises]" << std::endl;
+	std::cout << "[drilling noises]\n" << std::endl;
 	std::srand(std::time(0));
 	int random = std::rand() % 10;
 	if (random > 4)
-		std::cout << this->_target << " has been robotomized successfully 50%/ of the time." << std::endl;
+		std::cout << this->_target << " has been robotomized successfully 50%/ of the time.\n" << std::endl;
 	else
-		std::cout << "The robotomy failed." << std::endl;
+		std::cout << "The robotomy failed.\n" << std::endl;
 	return;
 }
 

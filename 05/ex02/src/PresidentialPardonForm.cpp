@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:13:57 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/09 15:59:41 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/09 16:43:59 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& rhs
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& rhs){
-	this->_target = rhs._target;
-	*this = rhs;
+	if (this != &rhs)
+	{
+		this->_target = rhs._target;
+		*this = rhs;
+	}
 	return *this;
 }
 
@@ -52,7 +55,7 @@ void	PresidentialPardonForm::execute(Bureaucrat const& executor) const{
 }
 
 void	PresidentialPardonForm::executePresidential() const{
-	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox.\n" << std::endl;
 	return;
 }
 

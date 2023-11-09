@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/11/09 16:22:58 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/09 16:25:11 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,15 +20,14 @@ CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 
+PATH_SRC = src/
 
-SRC = main.cpp\
-	  Bureaucrat.cpp\
-	  AForm.cpp\
-	  PresidentialPardonForm.cpp\
-	  ShrubberyCreationForm.cpp\
-	  RobotomyRequestForm.cpp\
-
-
+SRC = $(PATH_SRC)main.cpp\
+	  $(PATH_SRC)Bureaucrat.cpp\
+	  $(PATH_SRC)AForm.cpp\
+	  $(PATH_SRC)PresidentialPardonForm.cpp\
+	  $(PATH_SRC)ShrubberyCreationForm.cpp\
+	  $(PATH_SRC)RobotomyRequestForm.cpp\
 
 INCLUDE_DIR = include
 
