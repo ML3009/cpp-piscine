@@ -1,7 +1,7 @@
 #include "Intern.hpp"
 
 Intern::Intern(){
-	std::cout << "Random Intern is here" << std::endl;
+	std::cout << "\n[Intern] What can I do for you?\n" << std::endl;
 }
 
 Intern::Intern(const Intern& rhs){
@@ -17,7 +17,7 @@ Intern& Intern::operator=(const Intern& rhs){
 }
 
 Intern::~Intern(){
-	std::cout << "Random Intern is exhausted" << std::endl;
+	std::cout << "\n[Intern] I am leaving this internship!\n" << std::endl;
 }
 
 AForm*	Intern::makeForm(std::string form, std::string target) {
@@ -35,8 +35,10 @@ AForm*	Intern::makeForm(std::string form, std::string target) {
 				throw InternException();
 		}
 	}
-	catch(...) {
-		std::cerr << "Intern error" << std::endl;
+	catch(const Intern::InternException& e) {
+		std::cerr << "Caught an exception: " << e.what() << std::endl;
+	} catch (...) {
+		std::cerr << "Unknow error" << std::endl;
 	}
 	return NULL;
 }
@@ -64,11 +66,8 @@ int Intern::getForm(std::string form) {
 }
 
 
-/*---------- Getter / Setter ------------ */
+const char* Intern::InternException::what() const throw() {
+	return "Intern error!\n\n";
+}
 
-
-/*--------------- Function -------------- */
-
-
-/*--------------- Exception ------------- */
 

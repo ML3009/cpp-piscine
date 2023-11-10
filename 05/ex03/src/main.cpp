@@ -19,6 +19,50 @@
 
 int	main(){
 
+	std::cout << "\n[creation of office workers]\n" << std::endl;
+
+	Bureaucrat Bob ("Bob", 50);
+	Bureaucrat Jim ("Jim", 90);
+	Bureaucrat Kim ("Kim", 2);
+	Intern randomIntern;
+	
+	
+	std::cout << "\n[creation of forms by an intern]\n" << std::endl;
+	AForm* rrf;
+	AForm* prf;
+	AForm* srf;
+	rrf = randomIntern.makeForm("robotomy request", "RRF");
+	prf = randomIntern.makeForm("presidential pardon", "PRF");
+	srf = randomIntern.makeForm("shrubbery creation", "SRF");
+
+	
+	std::cout << "\n[signing and execution of forms by a bureaucrat]\n" << std::endl;
+	std::cout << "\n[Bob]\n" << std::endl;
+	Bob.signForm(*rrf);
+	Bob.executeForm(*rrf);
+	Bob.signForm(*prf);
+	Bob.executeForm(*prf);
+	Bob.signForm(*srf);
+	Bob.executeForm(*srf);
+
+	std::cout << "\n[Jim]\n" << std::endl;
+	Jim.signForm(*rrf);
+	Jim.executeForm(*rrf);
+	Jim.signForm(*prf);
+	Jim.executeForm(*prf);
+	Jim.signForm(*srf);
+	Jim.executeForm(*srf);
+
+	std::cout << "\n[Kim]\n" << std::endl;
+	Kim.signForm(*rrf);
+	Kim.executeForm(*rrf);
+	Kim.signForm(*prf);
+	Kim.executeForm(*prf);
+	Kim.signForm(*srf);
+	Kim.executeForm(*srf);
+
+
+	//penser a delete !!!!!!!!!!!!!
 
 	return 0;
 }
