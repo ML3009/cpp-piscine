@@ -76,8 +76,7 @@ void	Bureaucrat::executeForm(AForm const& form){
 		std::cerr << this->_name << " couldn't exectue " << form.getName() << " because " << e.what();
 	} catch (const AForm::FileError& e) {
 		std::cerr << e.what() << std::endl;
-	}
-	catch(...) {
+	} catch(...) {
 		std::cerr << "Unknow error" << std::endl;
 	}
 }
@@ -86,15 +85,14 @@ void	Bureaucrat::exceptFun(){
 	try {
 		if (this->_grade < 1)
 			throw GradeTooHighException();
-	} catch (const Bureaucrat::GradeTooHighException& e) {
-		std::cerr << "Caught an exception: " << e.what();
-	}
-
-	try {
 		if (this->_grade > 150)
 			throw GradeTooLowException();
+	} catch (const Bureaucrat::GradeTooHighException& e) {
+		std::cerr << "Caught an exception: " << e.what();
 	} catch (const Bureaucrat::GradeTooLowException& e) {
 		std::cerr << "Caught an exception : " << e.what();
+	} catch(...) {
+		std::cerr << "Unknow error" << std::endl;
 	}
 	return ;
 }

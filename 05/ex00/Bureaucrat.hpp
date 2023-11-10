@@ -19,7 +19,6 @@
 class Bureaucrat {
 
 	public:
-
 		Bureaucrat();
 		Bureaucrat(const std::string _name, int _grade);
 		Bureaucrat(const Bureaucrat& rhs);
@@ -42,10 +41,8 @@ class Bureaucrat {
 		void		exceptFun();
 
 	private:
-
 		const std::string	_name;
 		int					_grade;
-
 };
 
 std::ostream & operator<<(std::ostream& o, const Bureaucrat& rhs);

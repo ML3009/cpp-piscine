@@ -12,8 +12,6 @@
 
 #include "RobotomyRequestForm.hpp"
 
-/*----------------- Coplien ------------- */
-
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 72, 45){
 	this->_target = "randomRobotomy";
 }
@@ -57,7 +55,7 @@ void	RobotomyRequestForm::executeRobotomy() const{
 	std::srand(std::time(0));
 	int random = std::rand() % 10;
 	if (random > 4)
-		std::cout << this->_target << " has been robotomized successfully 50%/ of the time.\n" << std::endl;
+		std::cout << this->_target << " has been robotomized successfully 50% of the time.\n" << std::endl;
 	else
 		std::cout << "The robotomy failed.\n" << std::endl;
 	return;

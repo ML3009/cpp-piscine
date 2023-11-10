@@ -24,8 +24,8 @@ Bureaucrat::Bureaucrat(const Bureaucrat& rhs) : _name(rhs.getName()), _grade(rhs
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs) {
-	this->_grade = rhs._grade;
 	const_cast<std::string&>(this->_name) = rhs._name;
+	this->_grade = rhs._grade;
 	return *this;
 }
 
@@ -68,15 +68,14 @@ void	Bureaucrat::exceptFun() {
 	try {
 		if (this->_grade < 1)
 			throw GradeTooHighException();
-	} catch (const Bureaucrat::GradeTooHighException& e) {
-		std::cerr << "Caught an exception: " << e.what();
-	}
-
-	try {
 		if (this->_grade > 150)
 			throw GradeTooLowException();
+	} catch (const Bureaucrat::GradeTooHighException& e) {
+		std::cerr << "Caught an exception: " << e.what();
 	} catch (const Bureaucrat::GradeTooLowException& e) {
 		std::cerr << "Caught an exception : " << e.what();
+	} catch(...) {
+			std::cerr << "Unknow error" << std::endl;
 	}
 	return ;
 }
