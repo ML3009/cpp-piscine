@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:33 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/09 17:32:40 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/13 10:16:47 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,27 @@
 
 int	main(){
 
+//proteger internship
 	std::cout << "\n[creation of office workers]\n" << std::endl;
 
 	Bureaucrat Bob ("Bob", 50);
 	Bureaucrat Jim ("Jim", 90);
 	Bureaucrat Kim ("Kim", 2);
 	Intern randomIntern;
-	
-	
+
 	std::cout << "\n[creation of forms by an intern]\n" << std::endl;
 	AForm* rrf;
 	AForm* prf;
 	AForm* srf;
+	AForm *test;
 	rrf = randomIntern.makeForm("robotomy request", "RRF");
 	prf = randomIntern.makeForm("presidential pardon", "PRF");
 	srf = randomIntern.makeForm("shrubbery creation", "SRF");
+	std::cout << "\n[test ko]\n" << std::endl;
+	test = randomIntern.makeForm("test", "tttt");
 
-	
+
+
 	std::cout << "\n[signing and execution of forms by a bureaucrat]\n" << std::endl;
 	std::cout << "\n[Bob]\n" << std::endl;
 	Bob.signForm(*rrf);
@@ -61,8 +65,9 @@ int	main(){
 	Kim.signForm(*srf);
 	Kim.executeForm(*srf);
 
-
-	//penser a delete !!!!!!!!!!!!!
-
+	delete rrf;
+	delete prf;
+	delete srf;
+	delete test;
 	return 0;
 }
