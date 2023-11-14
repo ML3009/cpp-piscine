@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/11/06 17:00:30 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/14 10:21:09 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = Bureaucrat
+NAME = Converter
 
 CC = c++
 
