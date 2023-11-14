@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:31:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/14 15:55:10 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:59:22 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ bool		isChar(std::string str);
 bool		isInt(std::string str);
 bool		isDouble(std::string str);
 bool		isFloat(std::string str);
-char		toChar(std::string str);
-//static int		toInt(std::string str);
-//static double	toDouble(std::string str);
-//static float	toFloat(std::string str);
+void		toChar(std::string str);
+void		toInt(std::string str);
+void		toDouble(std::string str);
+void		toFloat(std::string str);
