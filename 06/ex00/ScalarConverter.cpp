@@ -70,8 +70,12 @@ void	toInt(std::string str){
 	char	*end;
 	long	num;
 	num = strtol(str.c_str(), &end, 10);
-	std::cout << "Conversion : " << std::endl
-	<< "char: " << "Non displayable" << std::endl;
+	std::cout << "Conversion : " << std::endl;
+
+	if (num < CHAR_MIN || num > CHAR_MAX)
+		std::cout << "char: " << "Non displayable" << std::endl;
+	else
+		std::cout << "char: " << static_cast<const char>(num) << std::endl;
 	if (num > INT_MAX)
 		std::cout << "int: overflow " << std::endl;
 	else if (num < INT_MIN)
@@ -97,8 +101,11 @@ void	toFloat(std::string str){
 		if (str[i] == '.')
 			point++;
 	num = strtof(str.c_str(), &end);
-	std::cout << "Conversion : " << std::endl
-	<< "char: " << "Non displayable" << std::endl;
+	std::cout << "Conversion : " << std::endl;
+	if (num < CHAR_MIN || num > CHAR_MAX)
+		std::cout << "char: " << "Non displayable" << std::endl;
+	else
+		std::cout << "char: " << static_cast<const char>(num) << std::endl;
 	if (num > (float)INT_MAX)
 		std::cout << "int: overflow " << std::endl;
 	else if (num < (float)INT_MIN)
@@ -124,8 +131,11 @@ void	toDouble(std::string str){
 		if (str[i] == '.')
 			point++;
 	num = strtod(str.c_str(), &end);
-	std::cout << "Conversion : " << std::endl
-	<< "char: " << "Non displayable" << std::endl;
+	std::cout << "Conversion : " << std::endl;
+	if (num < CHAR_MIN || num > CHAR_MAX)
+		std::cout << "char: " << "Non displayable" << std::endl;
+	else
+		std::cout << "char: " << static_cast<const char>(num) << std::endl;
 	if (num > (double)INT_MAX)
 		std::cout << "int: overflow " << std::endl;
 	else if (num < (double)INT_MIN)
@@ -168,6 +178,7 @@ bool	isInt(std::string str) {
 	char	*end;
 	long	num;
 	num = strtol(str.c_str(), &end, 10);
+	(void)num;
 	if (*end)
 		return false;
 	else
@@ -205,6 +216,7 @@ bool	isDouble(std::string str) {
 	char	*end;
 	long	num;
 	num = strtod(str.c_str(), &end);
+	(void)num;
 	if (*end)
 		return false;
 	else

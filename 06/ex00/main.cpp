@@ -14,7 +14,7 @@
 
 int main(int ac, char **av) {
 
-    (void)ac;
+    /*(void)ac;
 	(void)av;
 	std::cout << "----- TEST CHAR ---------" << std::endl;
     ScalarConverter::convert("TEST");
@@ -109,14 +109,14 @@ int main(int ac, char **av) {
 
     std::cout << "--------- TEST ERROR -----------------" << std::endl;
     ScalarConverter::convert("\t");
-    return 0;
+    return 0;*/
 
 
-	/*if (ac != 2) {
+	if (ac != 2) {
 		std::cout << "Error: wrong number of arguments." << std::endl;
 		return -1;
 	}
 	else
 		ScalarConverter::convert(av[1]);
-	return 0;*/
+	return 0;
 }
