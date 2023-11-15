@@ -2,17 +2,31 @@
 
 #include <iostream>
 #include <string>
+#include <ctime>
 
 
 class Base {
-
 	public:
-		Base();
-		Base(const Base& rhs);
-		Base& operator=(const Base& rhs);
-		~Base();
+		virtual ~Base();
+};
 
-	private:
+class A : public Base {
+	public:
+		A();
+};
+
+class B : public Base {
+	public:
+		B();
 
 };
 
+class C : public Base {
+	public:
+		C();
+
+};
+
+Base*	generate(void);
+void	identify(Base* p);
+void	identify(Base& p);
