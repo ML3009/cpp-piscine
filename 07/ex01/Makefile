@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/11/16 16:31:49 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/16 17:24:00 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ CC = c++
 CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 
 SRC = main.cpp\
-	  Base.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
