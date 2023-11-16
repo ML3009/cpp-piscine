@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:17:21 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/14 17:33:26 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:50:49 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@ int main(){
 	Data	*data2;
 	uintptr_t raw;
 
-	data.i = 0;
+	data.i = 3;
 	data.str = "salut";
 
-	std::cout << "\n[data]\n" << std::endl;
-	std::cout << data.i << std::endl
-	<< data.str << std::endl;
+	std::cout << "\n[data]" << std::endl;
+	std::cout << "adress: " << &data << std::endl;
+	std::cout << "int i: " << data.i << std::endl
+	<< "string str: " << data.str << std::endl;
 
 	raw = Serializer::serialize(&data);
 	data2 = Serializer::deserialize(raw);
 
-	std::cout << "\n[data2]\n" << std::endl;
-	std::cout << data2->i << std::endl
-	<< data2->str << std::endl;
-
+	std::cout << "\n[data2]" << std::endl;
+	std::cout << "adress: " << &data2 << std::endl;
+	std::cout << "int i: " << data2->i << std::endl
+	<< "string str: " << data2->str << std::endl << std::endl;
 	return 0;
 }

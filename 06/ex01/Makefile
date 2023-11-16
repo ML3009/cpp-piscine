@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/11/14 17:33:37 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/16 11:26:16 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,6 @@ CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 
 SRC = main.cpp\
 	  Serializer.cpp\
-
-
 
 OBJ = $(SRC:.cpp=.o)
 

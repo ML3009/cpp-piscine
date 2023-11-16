@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:35 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 11:13:07 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:00:21 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class Bureaucrat {
 		void		upGrade();
 		void		downGrade();
 		void		exceptFun();
-		void		signForm(Form sign);
+		void		signForm(Form &sign);
 
 	private:
 

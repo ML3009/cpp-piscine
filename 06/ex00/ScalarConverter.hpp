@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:31:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/14 15:59:22 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:52:30 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 #include <cctype>
 #include <cstdlib>
 #include <cerrno>
-#include <limits.h>
+#include <climits>
 #include <iomanip>
+#include <cmath>
 
 #define CHAR 0
 #define INT 1
 #define FLOAT 2
 #define DOUBLE 3
 #define IMPOSSIBLE " impossible"
-
 
 class ScalarConverter {
 
@@ -34,10 +34,12 @@ class ScalarConverter {
 		ScalarConverter& operator=(const ScalarConverter& rhs);
 		~ScalarConverter();
 		static void convert(std::string str);
-
-
 };
 	class CharConversion : public std::exception {
+		public:
+			virtual const char* what() const throw();
+	};
+	class Isprintable : public std::exception {
 		public:
 			virtual const char* what() const throw();
 	};
@@ -49,7 +51,6 @@ class ScalarConverter {
 		public:
 			virtual const char* what() const throw();
 	};
-
 
 int checkArg(std::string str);
 void	pseudoLiterals(std::string str);

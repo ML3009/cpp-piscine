@@ -26,10 +26,13 @@ AForm*	Intern::makeForm(std::string form, std::string target) {
 		level = getForm(form);
 		switch (level) {
 			case PRESIDENT:
+				std::cout << "Intern creates " << form << std::endl;
 				return createPresidential(target);
 			case ROBOT:
+				std::cout << "Intern creates " << form << std::endl;
 				return createRobot(target);
 			case SHRUBB:
+				std::cout << "Intern creates " << form << std::endl;
 				return createShrubb(target);
 			default:
 				throw InternException();

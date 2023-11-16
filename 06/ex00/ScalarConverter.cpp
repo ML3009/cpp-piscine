@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:31:38 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/14 16:43:12 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:37:46 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ void	ScalarConverter::convert(std::string str){
 		return;
 	int	option = getType(str);
 	if (option < 0) {
-		std::cout << "Error argument: " << str << std::endl;
+		std::cout << "Error argument: [" << str << "]" << std::endl;
 		return ;
 	}
-	std::cout << "Conversion : " << std::endl;
+	std::cout << "Conversion : [" << str << "]" << std::endl;
 	try{
 		std::cout << "char: ";
 		char a = toChar(str);
@@ -54,126 +54,54 @@ void	ScalarConverter::convert(std::string str){
 	std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
 	double d = toDouble(str);
 	std::cout << "double: " << d << std::endl;
-
-	/*
-	switch (option) {
-		case CHAR:
-			toChar(str);
-			break;
-		case INT:
-			toInt(str);
-			break;
-		case FLOAT:
-			toFloat(str);
-			break;
-		case DOUBLE:
-			toDouble(str);
-			break;
-		default:
-			std::cout << IMPOSSIBLE << std::endl;
-	}*/
 	return ;
 }
 
 char	toChar(std::string str){
-
-	char c = static_cast<const char>(str[0]);
+	char c;
 	double num = atof(str.c_str());
-	if (num < CHAR_MIN || num > CHAR_MAX)
-		throw CharConversion();
-	
-	
-	/*<< "int: " << static_cast<const int>(str[0]) << std::endl
-	<< "float: " << static_cast<const float>(str[0]) << ".0f" << std::endl
-	<< "double: " << static_cast<const double>(str[0]) << ".0" << std::endl;*/
+	if (isChar(str) == true)
+		c = static_cast<const char>(str[0]);
+	else{
+		c = static_cast<const char>(num);
+		if (num < 33 || num > 126)
+			throw Isprintable();
+	}
 	return c;
 }
 
 int	toInt(std::string str){
-
 	char	*end;
 	long	num;
 	num = strtol(str.c_str(), &end, 10);
-	/*std::cout << "Conversion : " << std::endl;
-
-	if (num < CHAR_MIN || num > CHAR_MAX)
-		std::cout << "char: " << "Non displayable" << std::endl;
-	else
-		std::cout << "char: " << static_cast<const char>(num) << std::endl;*/
 	if (num > INT_MAX)
 		throw IntConversionO();
 	if (num < INT_MIN)
 		throw IntConversionU();
-	num = static_cast<const int>(num);
-	/*if (-1000000 <= num || num >= 1000000) {
-		std::cout << "float: " << static_cast<const float>(num) << std::endl
-		<< "double: " << static_cast<const double>(num) << std::endl;
-	}
-	else {
-		std::cout << "float: " << static_cast<const float>(num) << ".0f" << std::endl
-		<< "double: " << static_cast<const double>(num) << ".0" << std::endl;
-	}*/
+	if (isChar(str) == false)
+		num = static_cast<const int>(num);
+	else
+		num = static_cast<const int>(str[0]);
 	return num;
 }
 
 float	toFloat(std::string str){
 	char	*end;
 	float	num;
-	/*int		point = 0;
-	for (int i = 0; str[i]; i++)
-		if (str[i] == '.')
-			point++;*/
-	num = strtof(str.c_str(), &end);
-	/*std::cout << "Conversion : " << std::endl;
-	if (num < CHAR_MIN || num > CHAR_MAX)
-		std::cout << "char: " << "Non displayable" << std::endl;
+	if (isChar(str) == false)
+		num = strtof(str.c_str(), &end);
 	else
-		std::cout << "char: " << static_cast<const char>(num) << std::endl;
-	if (num > (float)INT_MAX)
-		std::cout << "int: overflow " << std::endl;
-	else if (num < (float)INT_MIN)
-		std::cout << "int: underflow " << std::endl;
-	else
-		std::cout << "int: " << static_cast<const int>(num) << std::endl;*/
-	/*if (point == 1) {
-		std::cout << "float: " << num << "f" << std::endl
-		<< "double: " << static_cast<const double>(num) << std::endl;
-	}
-	else {
-		std::cout << "float: " << num << ".0f" << std::endl
-		<< "double: " << static_cast<const double>(num) << ".0" << std::endl;
-	}*/
-
+		num = static_cast<const float>(str[0]);
 	return num;
 }
 
 double	toDouble(std::string str){
 	char	*end;
 	double	num;
-	/*int		point = 0;
-	for (int i = 0; str[i]; i++)
-		if (str[i] == '.')
-			point++;*/
-	num = strtod(str.c_str(), &end);
-	/*std::cout << "Conversion : " << std::endl;
-	if (num < CHAR_MIN || num > CHAR_MAX)
-		std::cout << "char: " << "Non displayable" << std::endl;
+	if (isChar(str) == false)
+		num = strtod(str.c_str(), &end);
 	else
-		std::cout << "char: " << static_cast<const char>(num) << std::endl;
-	if (num > (double)INT_MAX)
-		std::cout << "int: overflow " << std::endl;
-	else if (num < (double)INT_MIN)
-		std::cout << "int: underflow " << std::endl;
-	else
-		std::cout << "int: " << static_cast<const int>(num) << std::endl;
-	if (point == 1) {
-		std::cout << "float: " << static_cast<const float>(num) << "f" << std::endl
-		<< "double: " << num << std::endl;
-	}
-	else {
-		std::cout << "float: " << static_cast<const float>(num) << ".0f" << std::endl
-		<< "double: " << num << ".0" << std::endl;
-	}*/
+		num = static_cast<const double>(str[0]);
 	return num;
 }
 
@@ -197,7 +125,6 @@ bool	isChar(std::string str) {
 }
 
 bool	isInt(std::string str) {
-
 	char	*end;
 	long	num;
 	num = strtol(str.c_str(), &end, 10);
@@ -209,7 +136,6 @@ bool	isInt(std::string str) {
 }
 
 bool	isFloat(std::string str) {
-
 	int i = -1;
 	int	f = 0;
 	int sign = 0;
@@ -246,16 +172,20 @@ bool	isDouble(std::string str) {
 		return true;
 }
 
-const char* CharConversion::what() const throw(){
+const char*	CharConversion::what() const throw(){
 	return "impossible";
 }
 
-const char* IntConversionO::what() const throw(){
+const char*	IntConversionO::what() const throw(){
 	return "Overflow";
 }
 
-const char* IntConversionU::what() const throw(){
+const char*	IntConversionU::what() const throw(){
 	return "Underflow";
+}
+
+const char*	Isprintable::what() const throw(){
+	return "Non displayable";
 }
 
 int	checkArg(std::string str){
@@ -270,6 +200,10 @@ int	checkArg(std::string str){
 		pseudoLiterals(str);
 		return -1;
 	}
+	if (str.length() < 1) {
+		std::cout <<  "Error: this character isn't printable." << std::endl;
+		return -1;
+	}
 	return 0;
 }
 
@@ -278,42 +212,42 @@ void	pseudoLiterals(std::string str){
 	int	literal = getPseudoLiterals(str);
 	switch (literal){
 		case 0:
-			std::cout << "Conversion: -inff" << std::endl
+			std::cout << "Conversion: [-inff]" << std::endl
 			<< "char:" << IMPOSSIBLE << std::endl
 			<< "int:" << IMPOSSIBLE << std::endl
 			<< "float:" << " -inff" << std::endl
 			<< "double:" << " -inf" << std::endl;
 			break;
 		case 1:
-			std::cout << "Conversion: +inff" << std::endl
+			std::cout << "Conversion: [+inff]" << std::endl
 			<< "char:" << IMPOSSIBLE << std::endl
 			<< "int:" << IMPOSSIBLE << std::endl
 			<< "float:" << " +inff" << std::endl
 			<< "double:" << " +inf" << std::endl;
 			break;
 		case 2:
-			std::cout << "Conversion: nanf" << std::endl
+			std::cout << "Conversion: [nanf]" << std::endl
 			<< "char:" << IMPOSSIBLE << std::endl
 			<< "int:" << IMPOSSIBLE << std::endl
 			<< "float:" << " nanf" << std::endl
 			<< "double:" << " nan" << std::endl;
 			break;
 		case 3:
-			std::cout << "Conversion: -inf" << std::endl
+			std::cout << "Conversion: [-inf]" << std::endl
 			<< "char:" << IMPOSSIBLE << std::endl
 			<< "int:" << IMPOSSIBLE << std::endl
 			<< "float:" << " -inff" << std::endl
 			<< "double:" << " -inf" << std::endl;
 			break;
 		case 4:
-			std::cout << "Conversion: +inf" << std::endl
+			std::cout << "Conversion: [+inf]" << std::endl
 			<< "char:" << IMPOSSIBLE << std::endl
 			<< "int:" << IMPOSSIBLE << std::endl
 			<< "float:" << " +inff" << std::endl
 			<< "double:" << " +inf" << std::endl;
 			break;
 		case 5:
-			std::cout << "Conversion: nan" << std::endl
+			std::cout << "Conversion: [nan]" << std::endl
 			<< "char:" << IMPOSSIBLE << std::endl
 			<< "int:" << IMPOSSIBLE << std::endl
 			<< "float:" << " nanf" << std::endl

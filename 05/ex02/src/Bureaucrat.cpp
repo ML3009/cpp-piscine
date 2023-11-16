@@ -6,13 +6,13 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/09 16:43:42 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:08:35 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("random"), _grade(0) { }
+Bureaucrat::Bureaucrat() : _name("random"), _grade(40) { this->exceptFun(); }
 
 Bureaucrat::Bureaucrat(const std::string _name, int _grade) : _name(_name), _grade(_grade) {
 	std::cout << *this << std::endl;
@@ -40,15 +40,25 @@ int	Bureaucrat::getGrade() const {
 }
 
 void	Bureaucrat::downGrade() {
+	try {
+		if (this->_grade + 1 > 150)
+			throw GradeTooLowException();
 	std::cout << "Decrease in "  << this->_name  << " grade " << this->_grade << " to " << this->_grade + 1<< std::endl;
 	this->_grade++;
-	this->exceptFun();
+	} catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cerr << "Caught an exception: " << e.what();
+	}
 }
 
 void Bureaucrat::upGrade() {
+	try {
+		if (this->_grade - 1 < 1)
+			throw GradeTooHighException();
 	std::cout << "Increase in "  << this->_name  << " grade " << this->_grade << " to " << this->_grade - 1 << std::endl;
 	this->_grade--;
-	this->exceptFun();
+	} catch (const Bureaucrat::GradeTooHighException& e) {
+		std::cerr << "Caught an exception: " << e.what();
+	}
 }
 
 void	Bureaucrat::signForm(AForm& sign){
@@ -73,7 +83,7 @@ void	Bureaucrat::executeForm(AForm const& form){
 	} catch (const AForm::GradeTooLowException& e){
 		std::cerr << this->_name << " couldn't execute " << form.getName() << " because " << e.what();
 	} catch (const AForm::SignExecException& e){
-		std::cerr << this->_name << " couldn't exectue " << form.getName() << " because " << e.what();
+		std::cerr << this->_name << " couldn't execute " << form.getName() << " because " << e.what();
 	} catch (const AForm::FileError& e) {
 		std::cerr << e.what() << std::endl;
 	} catch(...) {

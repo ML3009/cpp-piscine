@@ -6,13 +6,13 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 19:33:24 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 12:13:19 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:12:54 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() : _name("unknow"), _sign(false), _gradSign(0), _gradExec(0) { }
+Form::Form() : _name("unknow"), _sign(false), _gradSign(5), _gradExec(5) { }
 
 Form::Form(const std::string _name, const int _gradSign, const int _gradExec) : _name(_name), _sign(false), _gradSign(_gradSign), _gradExec(_gradExec) {
 	std::cout << *this << std::endl;

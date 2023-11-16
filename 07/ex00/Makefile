@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/11/16 11:26:10 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/11/16 16:30:31 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,13 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = Base
+NAME = whatever
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 
 SRC = main.cpp\
-	  Base.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -29,7 +28,7 @@ all : $(NAME)
 
 $(NAME) : $(OBJ)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-	@echo $(GREEN)"\n cpp 06: ex02 [COMPILATION OK]\n"$(NC)
+	@echo $(GREEN)"\n cpp 07: ex00 [COMPILATION OK]\n"$(NC)
 
 .cpp.o :
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -39,7 +38,7 @@ clean :
 
 fclean : clean
 	@rm -f $(NAME)
-	@echo $(GREEN)"\n cpp 06: ex02  [CLEAN OK]\n" $(NC)
+	@echo $(GREEN)"\n cpp 07: ex00  [CLEAN OK]\n" $(NC)
 
 re : fclean all
 

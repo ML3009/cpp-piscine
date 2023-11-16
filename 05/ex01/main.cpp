@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:33 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/08 12:10:03 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:01:46 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main() {
 
 	std::cout << "\n[Bureaucrat's creation]\n" << std::endl;
 	Bureaucrat Bob("Bob", 60);
-	Bureaucrat Jim("Jim", 0);
+	Bureaucrat Jim("Jim", 3);
 	Bureaucrat Kim("Kim", 1);
 
 	std::cout << "\n[Form's creation]\n" << std::endl;
@@ -31,13 +31,14 @@ int	main() {
 	Bob.signForm(file);
 	Jim.signForm(file);
 	Kim.signForm(file);
+	std::cout << file << std::endl;
 
 	std::cout << "\n[2]\n" << std::endl;
 	std::cout << file2 << std::endl;
 	Bob.signForm(file2);
-	Jim.signForm(file);
+	Jim.signForm(file2);
 	Kim.signForm(file2);
-
+	std::cout << file2 << std::endl;
 
 	return 0;
 }

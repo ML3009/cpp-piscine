@@ -12,7 +12,7 @@
 
 #include "AForm.hpp"
 
-AForm::AForm() : _name("unknow"), _sign(false), _gradSign(0), _gradExec(0) { }
+AForm::AForm() : _name("unknow"), _sign(false), _gradSign(5), _gradExec(5) { }
 
 AForm::AForm(const std::string _name, const int _gradSign, const int _gradExec) : _name(_name), _sign(false), _gradSign(_gradSign), _gradExec(_gradExec) {
 	std::cout << *this << std::endl;

@@ -6,13 +6,15 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:37 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/09 16:13:28 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:00:07 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("random"), _grade(0) { }
+Bureaucrat::Bureaucrat() : _name("random"), _grade(40) {
+	this->exceptFun();
+}
 
 Bureaucrat::Bureaucrat(const std::string _name, int _grade) : _name(_name), _grade(_grade) {
 	std::cout << *this << std::endl;
@@ -40,18 +42,28 @@ int	Bureaucrat::getGrade() const {
 }
 
 void	Bureaucrat::downGrade() {
+	try {
+		if (this->_grade + 1 > 150)
+			throw GradeTooLowException();
 	std::cout << "Decrease in "  << this->_name  << " grade " << this->_grade << " to " << this->_grade + 1<< std::endl;
 	this->_grade++;
-	this->exceptFun();
+	} catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cerr << "Caught an exception: " << e.what();
+	}
 }
 
 void Bureaucrat::upGrade() {
+	try {
+		if (this->_grade - 1 < 1)
+			throw GradeTooHighException();
 	std::cout << "Increase in "  << this->_name  << " grade " << this->_grade << " to " << this->_grade - 1 << std::endl;
 	this->_grade--;
-	this->exceptFun();
+	} catch (const Bureaucrat::GradeTooHighException& e) {
+		std::cerr << "Caught an exception: " << e.what();
+	}
 }
 
-void	Bureaucrat::signForm(Form sign) {
+void	Bureaucrat::signForm(Form &sign) {
 	try {
 		sign.beSigned(*this);
 		std::cout << this->_name << " signed " << sign.getName() << std::endl << std::endl;
@@ -66,10 +78,12 @@ void	Bureaucrat::signForm(Form sign) {
 
 void	Bureaucrat::exceptFun() {
 	try {
-		if (this->_grade < 1)
+		if (this->_grade < 1) {
 			throw GradeTooHighException();
-		if (this->_grade > 150)
+		}
+		if (this->_grade > 150) {
 			throw GradeTooLowException();
+		}
 	} catch (const Bureaucrat::GradeTooHighException& e) {
 		std::cerr << "Caught an exception: " << e.what();
 	} catch (const Bureaucrat::GradeTooLowException& e) {

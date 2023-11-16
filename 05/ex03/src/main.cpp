@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 17:00:33 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/13 10:16:47 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/15 11:12:03 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 
 int	main(){
 
-//proteger internship
 	std::cout << "\n[creation of office workers]\n" << std::endl;
-
 	Bureaucrat Bob ("Bob", 50);
 	Bureaucrat Jim ("Jim", 90);
 	Bureaucrat Kim ("Kim", 2);
