@@ -25,7 +25,6 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& rhs){
 	return *this;
 }
 
-
 ScalarConverter::~ScalarConverter(){}
 
 void	ScalarConverter::convert(std::string str){
@@ -36,6 +35,27 @@ void	ScalarConverter::convert(std::string str){
 		std::cout << "Error argument: " << str << std::endl;
 		return ;
 	}
+	std::cout << "Conversion : " << std::endl;
+	try{
+		std::cout << "char: ";
+		char a = toChar(str);
+		std::cout << a << std::endl;
+	} catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	try{
+		std::cout << "int: ";
+		int b = toInt(str);
+		std::cout << b << std::endl;
+	} catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	float f = toFloat(str);
+	std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+	double d = toDouble(str);
+	std::cout << "double: " << d << std::endl;
+
+	/*
 	switch (option) {
 		case CHAR:
 			toChar(str);
@@ -51,57 +71,60 @@ void	ScalarConverter::convert(std::string str){
 			break;
 		default:
 			std::cout << IMPOSSIBLE << std::endl;
-	}
+	}*/
 	return ;
 }
 
-void	toChar(std::string str){
+char	toChar(std::string str){
 
-	std::cout << "Conversion : " << std::endl
-	<< "char: " << static_cast<const char>(str[0]) << std::endl
-	<< "int: " << static_cast<const int>(str[0]) << std::endl
+	char c = static_cast<const char>(str[0]);
+	double num = atof(str.c_str());
+	if (num < CHAR_MIN || num > CHAR_MAX)
+		throw CharConversion();
+	
+	
+	/*<< "int: " << static_cast<const int>(str[0]) << std::endl
 	<< "float: " << static_cast<const float>(str[0]) << ".0f" << std::endl
-	<< "double: " << static_cast<const double>(str[0]) << ".0" << std::endl;
-	return;
+	<< "double: " << static_cast<const double>(str[0]) << ".0" << std::endl;*/
+	return c;
 }
 
-void	toInt(std::string str){
+int	toInt(std::string str){
 
 	char	*end;
 	long	num;
 	num = strtol(str.c_str(), &end, 10);
-	std::cout << "Conversion : " << std::endl;
+	/*std::cout << "Conversion : " << std::endl;
 
 	if (num < CHAR_MIN || num > CHAR_MAX)
 		std::cout << "char: " << "Non displayable" << std::endl;
 	else
-		std::cout << "char: " << static_cast<const char>(num) << std::endl;
+		std::cout << "char: " << static_cast<const char>(num) << std::endl;*/
 	if (num > INT_MAX)
-		std::cout << "int: overflow " << std::endl;
-	else if (num < INT_MIN)
-		std::cout << "int: underflow " << std::endl;
-	else
-		std::cout << "int: " << static_cast<const int>(num) << std::endl;
-	if (-1000000 <= num || num >= 1000000) {
+		throw IntConversionO();
+	if (num < INT_MIN)
+		throw IntConversionU();
+	num = static_cast<const int>(num);
+	/*if (-1000000 <= num || num >= 1000000) {
 		std::cout << "float: " << static_cast<const float>(num) << std::endl
 		<< "double: " << static_cast<const double>(num) << std::endl;
 	}
 	else {
 		std::cout << "float: " << static_cast<const float>(num) << ".0f" << std::endl
 		<< "double: " << static_cast<const double>(num) << ".0" << std::endl;
-	}
-	return;
+	}*/
+	return num;
 }
 
-void	toFloat(std::string str){
+float	toFloat(std::string str){
 	char	*end;
 	float	num;
-	int		point = 0;
+	/*int		point = 0;
 	for (int i = 0; str[i]; i++)
 		if (str[i] == '.')
-			point++;
+			point++;*/
 	num = strtof(str.c_str(), &end);
-	std::cout << "Conversion : " << std::endl;
+	/*std::cout << "Conversion : " << std::endl;
 	if (num < CHAR_MIN || num > CHAR_MAX)
 		std::cout << "char: " << "Non displayable" << std::endl;
 	else
@@ -111,27 +134,28 @@ void	toFloat(std::string str){
 	else if (num < (float)INT_MIN)
 		std::cout << "int: underflow " << std::endl;
 	else
-		std::cout << "int: " << static_cast<const int>(num) << std::endl;
-	if (point == 1) {
+		std::cout << "int: " << static_cast<const int>(num) << std::endl;*/
+	/*if (point == 1) {
 		std::cout << "float: " << num << "f" << std::endl
 		<< "double: " << static_cast<const double>(num) << std::endl;
 	}
 	else {
 		std::cout << "float: " << num << ".0f" << std::endl
 		<< "double: " << static_cast<const double>(num) << ".0" << std::endl;
-	}
-	return;
+	}*/
+
+	return num;
 }
 
-void	toDouble(std::string str){
+double	toDouble(std::string str){
 	char	*end;
 	double	num;
-	int		point = 0;
+	/*int		point = 0;
 	for (int i = 0; str[i]; i++)
 		if (str[i] == '.')
-			point++;
+			point++;*/
 	num = strtod(str.c_str(), &end);
-	std::cout << "Conversion : " << std::endl;
+	/*std::cout << "Conversion : " << std::endl;
 	if (num < CHAR_MIN || num > CHAR_MAX)
 		std::cout << "char: " << "Non displayable" << std::endl;
 	else
@@ -149,12 +173,11 @@ void	toDouble(std::string str){
 	else {
 		std::cout << "float: " << static_cast<const float>(num) << ".0f" << std::endl
 		<< "double: " << num << ".0" << std::endl;
-	}
-	return;
+	}*/
+	return num;
 }
 
 int	getType(std::string str) {
-
 	if (isChar(str) == true)
 		return CHAR;
 	else if (isInt(str) == true)
@@ -221,6 +244,18 @@ bool	isDouble(std::string str) {
 		return false;
 	else
 		return true;
+}
+
+const char* CharConversion::what() const throw(){
+	return "impossible";
+}
+
+const char* IntConversionO::what() const throw(){
+	return "Overflow";
+}
+
+const char* IntConversionU::what() const throw(){
+	return "Underflow";
 }
 
 int	checkArg(std::string str){
