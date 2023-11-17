@@ -28,7 +28,7 @@
 
 class ScalarConverter {
 
-	public:
+	private:
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter& rhs);
 		ScalarConverter& operator=(const ScalarConverter& rhs);
