@@ -14,14 +14,13 @@ GREEN	= "\033[1;32m"
 
 NC = "\033[m"
 
-NAME = Base
+NAME = Array
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98
 
 SRC = main.cpp\
-	  Base.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
