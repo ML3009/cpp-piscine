@@ -10,6 +10,7 @@ class Array {
         Array(const Array& rhs){*this = rhs;};
         Array&  operator=(const Array& rhs){
             if (this != &rhs){
+                delete [] this->_array;
                 this->_size = rhs._size;
                 this->_array = new T[this->_size];
                 for(int i = 0; i < rhs._size; i++)
@@ -30,6 +31,13 @@ class Array {
                     return "Index is out of bounds.";
                 };
         };
+
+        void    print(const int i){
+            if (!this->_array || i < 0 || i >= this->_size)
+                return;
+            //for (int i = 0; i < this->_size; i++)
+                std::cout << "[" << i << "]: [" << this->_array[i] << "]" << std::endl;
+        }
 
     private:
         T*  _array;
