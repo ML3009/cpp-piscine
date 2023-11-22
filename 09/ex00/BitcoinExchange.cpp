@@ -14,7 +14,6 @@ BitcoinExchange&    BitcoinExchange::operator=(const BitcoinExchange& rhs) {
 BitcoinExchange::~BitcoinExchange() {};
 
 void	BitcoinExchange::createDatabase() {
-
 	std::string isdata("data.csv");
 	if (isdata.empty())
 		throw errorEmpty();
@@ -70,8 +69,7 @@ bool	BitcoinExchange::isValidLine(const std::string& line) const {
 	size_t pipePos = line.find('|');
 	if (pipePos != std::string::npos && pipePos > 0 && pipePos < line.length() - 1)
 		return true;
-	std::cerr << "Error: bad input => " << line <<  std::endl;
-	return false;
+	return std::cerr << "Error: bad input => " << line <<  std::endl, false;
 }
 
 bool	BitcoinExchange::isValidDate(const std::string& line) const {
@@ -82,8 +80,7 @@ bool	BitcoinExchange::isValidDate(const std::string& line) const {
 		if ((year >= 2009 && year <= 2022) && (month >= 1 && month <= 12) && (day >= 1 && day <= 31))
 			return true;
 	}
-	std::cerr << "Error: bad input" << std::endl;
-	return false;
+	return std::cerr << "Error: bad input" << std::endl, false;
 }
 
 bool	BitcoinExchange::isValidNumber(const std::string& line) const {
@@ -102,7 +99,6 @@ bool	BitcoinExchange::isValidNumber(const std::string& line) const {
 }
 
 void	BitcoinExchange::getResult(std::string& line) {
-
 	size_t	pos = line.find('|');
 	std::string tmp = line.substr(0, pos);
 	std::string tmp2 = line.substr(pos + 2);
@@ -116,9 +112,8 @@ void	BitcoinExchange::getResult(std::string& line) {
 		std::string currentDate = it->first;
 		std::tm currentTime = convertDate(currentDate);
 		std::time_t currentTimeT = std::mktime(&currentTime);
-		if (currentTimeT > inputTimeT) {
+		if (currentTimeT > inputTimeT)
 			break;
-		}
 		std::tm closestTime = convertDate(closestDate);
 		if (closestDate.empty() || currentTimeT > std::mktime(&closestTime)) {
 			closestDate = currentDate;
