@@ -126,8 +126,10 @@ void	BitcoinExchange::getResult(std::string& line) {
 
 std::tm	BitcoinExchange::convertDate(const std::string& line) {
 	std::tm time = {};
-	std::istringstream date(line);
-	date >> std::get_time(&time, "%Y-%m-%d");
+	if (sscanf(line.c_str(), "%d-%d-%d", &time.tm_year, &time.tm_mon, &time.tm_mday) == 3){
+		time.tm_year -= 1900;
+		time.tm_mon -= 1;
+	} 
 	return time;
 }
 
