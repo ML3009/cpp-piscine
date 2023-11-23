@@ -6,14 +6,14 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:09:56 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/16 15:10:10 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/23 10:33:59 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 
 int main( void ) {
-	
+
 	std::cout << "\e[4;32m" << "[TEST 1: int]" << "\e[0m" << std::endl;
 	int a = 2;
 	int b = 3;
@@ -25,8 +25,8 @@ int main( void ) {
 	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 	std::cout << "\e[0;94m" << "max function" << "\e[0m" << std::endl;
 	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl << std::endl;
-	
-	std::cout << "\e[4;32m" << "[TEST 2: string]" << "\e[0m" << std::endl; // ordre lexicographique
+
+	std::cout << "\e[4;32m" << "[TEST 2: string]" << "\e[0m" << std::endl;
 	std::string c = "chaine1";
 	std::string d = "chaine2";
 	std::cout << "\e[0;94m" << "swap function" << "\e[0m" << std::endl;

@@ -4,60 +4,55 @@
 #define MAX_VAL 750
 int main(int, char**)
 {
-    Array<int> numbers(MAX_VAL); 
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //numbers.print(749);
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
-    //mirror[9] = 5;
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    /*try
-    {
-        numbers[749] = 4;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    numbers.print(749);*/
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;
-    return 0;
+	Array<int> numbers(MAX_VAL);
+	int* mirror = new int[MAX_VAL];
+	srand(time(NULL));
+	std::cout << "\e[0;94m" << "[initialization number and mirror] " << "\e[0m" << std::endl;
+	for (int i = 0; i < MAX_VAL; i++){
+		const int value = rand();
+		numbers[i] = value;
+		mirror[i] = value;
+	}
+	std::cout << "\e[0;94m" << "[print number[749]]" << "\e[0m" << std::endl;
+	numbers.print(749);
+	{
+		Array<int> tmp = numbers;
+		Array<int> test(tmp);
+	}
+	//std::cout << "\e[0;94m" << "[modif miror[9] = 5]" << "\e[0m" << std::endl;
+	//mirror[9] = 5;
+	std::cout << "\e[0;94m" << "[comparison of mirror and value]" << "\e[0m" << std::endl;
+	for (int i = 0; i < MAX_VAL; i++){
+		if (mirror[i] != numbers[i]){
+			std::cerr << "didn't save the same value!!" << std::endl;
+			return 1;
+		}
+	}
+	std::cout << "\e[0;94m" << "[try catch number[749] = 4]" << "\e[0m" << std::endl;
+	try{
+		numbers[749] = 4;
+	} catch(const std::exception& e){
+		std::cerr << e.what() << '\n';
+	}
+	numbers.print(749);
+	std::cout << "\e[0;94m" << "[try catch number[-2] = 0]" << "\e[0m" << std::endl;
+	try{
+		numbers[-2] = 0;
+	} catch(const std::exception& e){
+		std::cerr << e.what() << '\n';
+	}
+	std::cout << "\e[0;94m" << "[try catch number[MAX_VAL] = 0]" << "\e[0m" << std::endl;
+	try {
+		numbers[MAX_VAL] = 0;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+	for (int i = 0; i < MAX_VAL; i++){
+		numbers[i] = rand();
+	}
+	/*for (int i = 0; i < MAX_VAL; i++) {
+		numbers.print(i);
+	}*/
+	delete [] mirror;
+	return 0;
 }

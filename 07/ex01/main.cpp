@@ -6,11 +6,17 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:32:34 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/16 17:31:53 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/23 09:54:35 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+
+template< typename T >
+void	print(T& x){
+  std::cout << x << std::endl;
+  return;
+}
 
 class Awesome{
   public:
