@@ -14,7 +14,8 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-
+#include <stack>
+#include <sstream>
 
 class RPN {
 	public:
@@ -22,5 +23,16 @@ class RPN {
 		RPN(const RPN& rhs);
 		RPN& operator=(const RPN& rhs);
 		~RPN();
+	void isValidExpr(char * av);
+	int	getResult(std::string& str);
 
+	class invalidExpr : public std::exception {
+		public:
+			virtual const char* what() const throw();
+	};
+	private:
+		std::stack<int> opStack;
 };
+
+
+
