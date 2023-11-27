@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:33:49 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/27 15:56:57 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:33:40 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ void	PmergeMe::sortVector(int start, int end) {
 	if (end - start > _K) {
 		int q = (start + end) / 2;
 		sortVector(start, q);
-		print(_vector);
+		//print(_vector);
 		sortVector(q + 1, end);
 		mergeVector(start, q, end);
-		print(_vector);
+		//print(_vector);
 	}
 	else
 		insertionVector(start, end);
@@ -120,8 +120,11 @@ void	PmergeMe::mergeVector(int start, int mid, int end){
 	return;
 }
 
-void	PmergeMe::insertionVector(int start, int mid) {
-	for (int i = start; i < mid; i++) {
+void	PmergeMe::insertionVector(int start, int end) {
+	//std::cout << start << std::endl;
+	std::cout << "VEC";
+	print(_vector);
+	for (int i = start; i < end; i++) {
 		int value = _vector[i + 1];
 		int j = i + 1;
 		while (j > start && _vector[j - 1] > value) {
@@ -130,6 +133,8 @@ void	PmergeMe::insertionVector(int start, int mid) {
 		}
 		_vector[j] = value;
 	}
+	std::cout << "VEC";
+	print(_vector);
 	return;
 }
 

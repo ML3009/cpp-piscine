@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:34:06 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/27 15:56:12 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:21:12 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class PmergeMe{
 		void	isValidSeq(char **av);
 		void 	sortVector(int start, int end);
 		void	mergeVector(int start, int mid, int end);
-		void	insertionVector(int start, int mid);
+		void	insertionVector(int start, int end);
 		void 	sortDeque(int start, int end);
 		void	mergeDeque(int start, int mid, int end);
 		void	insertionDeque(int start, int mid);
