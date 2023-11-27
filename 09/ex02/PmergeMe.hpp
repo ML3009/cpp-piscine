@@ -43,7 +43,7 @@ class PmergeMe{
 		void	insertionVector(int start, int end);
 		void 	sortDeque(int start, int end);
 		void	mergeDeque(int start, int mid, int end);
-		void	insertionDeque(int start, int mid);
+		void	insertionDeque(int start, int end);
 
 
 
@@ -56,7 +56,7 @@ class PmergeMe{
 
 template<typename T>
 void    print(std::vector<T> &tab){
-   // std::cout << " Type : Vector\t| " ;
+    std::cout << " Type : Vector\t" ;
 	std::vector<T> tmp = tab;
 	for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end(); ++it)
 		std::cout << *it << " ";
@@ -66,13 +66,11 @@ void    print(std::vector<T> &tab){
 
 template<typename T>
 void    print(std::deque<T> &tab){
-    std::cout << " Type : Deque\t| ";
+    std::cout << " Type : Deque\t ";
     std::deque<T> tmp = tab;
-    while (!tmp.empty()) {
-        std::cout << tmp.back() << " | ";
-        tmp.pop_back();
-    }
-    std::cout << std::endl;
+	for (std::deque<int>::iterator it = tmp.begin(); it != tmp.end(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
     return;
 }
 
