@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:33:49 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/11/27 16:33:40 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:12:31 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void	PmergeMe::isValidSeq(char **av) {
 	std::cout << "\033[34m" << "After: " << "\033[0m";
 	print(_deque);
 	print(_vector);
-	std::cout << std::fixed << std::setprecision(2) << "Time to process a range of " << _vector.size() << " elements with std::_vector<int> _vector : " << (_vectorTimeEnd - _vectorTime) << " ms" << std::endl;
-	std::cout << "Time to process a range of " << _deque.size() << " elements with std::deque<int> _deque : " << (dequeTimeEnd - dequeTime)<< " ms" << std::endl;
+	std::cout << std::fixed << std::setprecision(2) << "Time to process a range of " << _vector.size() << " elements with std::_vector<int> _vector : " << (_vectorTimeEnd - _vectorTime) << " us" << std::endl;
+	std::cout << "Time to process a range of " << _deque.size() << " elements with std::deque<int> _deque : " << (dequeTimeEnd - dequeTime)<< " us" << std::endl;
 	return;
 }
 
@@ -151,7 +151,7 @@ void	PmergeMe::mergeDeque(int start, int mid, int end) {
 }
 
 void	PmergeMe::insertionDeque(int start, int end) {
-		for (int i = start; i <= end; i++) {
+		for (int i = start; i < end; i++) {
 		int value = _deque[i + 1];
 		int j = i + 1;
 		while (j > start && _deque[j - 1] > value) {
@@ -177,7 +177,7 @@ std::vector<int>	PmergeMe::copyVector (std::vector<int>& tab, int start, int end
 
 std::deque<int>	PmergeMe::copyDeque (std::deque<int>& tab, int start, int end) {
 	std::deque<int> copy;
-	for (int i = start; i <= end; i++)
+	for (int i = start; i < end; i++)
 		copy.push_back(tab[i]);
 	return copy;
 }
